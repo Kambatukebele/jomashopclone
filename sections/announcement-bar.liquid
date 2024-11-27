@@ -8,6 +8,7 @@
     </div>
     <div>
       <div>
+        <span></span>
         <p>Chat or Call (900) 000-1113</p>
       </div>
       <div>
@@ -20,7 +21,17 @@
   </div>
 </section>
 
-{% schema %} { "name": "annoucement-bar", "class": "annoucement-bar", "tag":
-"section", "enabled_on": { "groups": ["header"] }, "settings": [], "locales": {
-"en": { "title": "Annoucement bar" }, "fr": { "title": "Barre d'announce" } },
-"presets": [ { "name": "Annoucement bar" } ] } {% endschema %}
+{% schema %}
+{
+  "name": "annoucement-bar",
+  "class": "annoucement-bar",
+  "tag": "section",
+  "enabled_on": { "groups": ["header"] },
+  "settings": [],
+  "locales": {
+    "en": { "title": "Annoucement bar" },
+    "fr": { "title": "Barre d'announce" }
+  },
+  "presets": [{ "name": "Annoucement bar" }]
+}
+{% endschema %}
