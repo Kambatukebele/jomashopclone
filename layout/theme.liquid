@@ -7,6 +7,8 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <title>title here</title>
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'reset.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
   </head>
   <body>
