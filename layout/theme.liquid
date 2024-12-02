@@ -6,13 +6,37 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon_id != blank -%}
+      <link rel="icon" type="image/x-icon" href="{{- settings.favicon_id | image_url -}}">
+    {%- endif -%}
+
     <title>title here</title>
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'reset.css' | asset_url | stylesheet_tag }}
+    {% comment %} Fonts {% endcomment %}
+    <style>
+      {{ settings.heading_font_picker_id | font_face }}
+      {{ settings.body_font_picker_id | font_face }}
+      h1,h2,h3,h4,h5,h6{
+          font-family: {{ settings.heading_font_picker_id.family }};
+          font-weight: {{ settings.heading_font_picker_id.weight }};
+          font-style: {{ settings.heading_font_picker_id.style }}
+      }
+      p,span,a,small, button{
+        font-family: {{ settings.body_font_picker_id.family }};
+          font-weight: {{ settings.body_font_picker_id.weight }};
+          font-style: {{ settings.body_font_picker_id.style }}
+      }
+    </style>
+    {% comment %} End Fonts {% endcomment %}
+
     {{ content_for_header }}
   </head>
   <body>
     {% sections 'header-group' %}
     {{ content_for_layout }}
+
+    {% comment %} Scripts {% endcomment %}
+    {{ 'announcement-bar.js' | asset_url | script_tag }}
   </body>
 </html>

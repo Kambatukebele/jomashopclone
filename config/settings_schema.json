@@ -6,5 +6,51 @@
     "theme_author": "Kamba Tukebele",
     "theme_documentation_url": "https://kambatukebele.com/",
     "theme_support_url": "https://kambatukebele.com/"
+  },
+  {
+    "name": "Heading Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "heading_font_picker_id",
+        "label": "Heading Typography",
+        "info": "Choose Heading Typography",
+        "default": "mono"
+      }
+    ]
+  },
+  {
+    "name": "Body Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "body_font_picker_id",
+        "label": "Body Typography",
+        "info": "Choose Body Typography",
+        "default": "mono"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon_id",
+        "label": "Favicon",
+        "info": "The standard size for favicons is 16x16 pixels, but most designers start with 32x32 pixels to accommodate retina screen"
+      }
+    ]
   }
+  // {
+  //   "name": "Colors",
+  //   "settings": [
+  //     {
+  //       "type": "color_scheme",
+  //       "id": "color_scheme_id",
+  //       "label": "Colors",
+  //       "default": "scheme_1"
+  //     }
+  //   ]
+  // }
 ]
