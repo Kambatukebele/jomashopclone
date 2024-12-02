@@ -1,43 +1,59 @@
 {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
 
 <section class="annoucement w-screen">
-  <div class="announcement__wrapper container h-fit ">
-    <div class="announcement__wrapper--left w-full whitespace-nowrap">
-      <p class="annoucement__wrapper--left-paragraph inline">EARLY BLA CK FRIDAY SALE</p>
-      <p class="annoucement__wrapper--left-paragraph inline">DOORBUSTE RS | LIMITED QUANTITIES</p>
-      <p class="annoucement__wrapper--left-paragraph inline">920,000+ HAPPY CUSTOMERS | ⭐⭐⭐⭐⭐ | SINCE 1999</p>
-      <p class="annoucement__wrapper--left-paragraph inline">EXTENDED RETURNS UNTIL JAN. 10th 2025</p>
-    </div>
-    <div class="announcement__wrapper--right">
-      <div>
-        <span>
-          {% render 'icon_dialogue', width: 24, height: 24 %}
-        </span>
-        <span><p>Chat or Call (900) 000-1113</p></span>
+  <div class="announcement__wrapper container">
+    <div class="announcement__left">
+      <div class="annoucement__left--div">
+        <p class="annoucement__left--div-paragraph">EARLY BLA CK FRIDAY SALE</p>
       </div>
-      <div>
-        <div>
-          <span>
-            {% render 'icon_phone_call', width: 24, height: 24 %}
-          </span>
-          <a href="">Call</a>
+      {% comment %}
+        <div class="annoucement__left--div">
+          <p class="annoucement__left--div-paragraph">DOORBUSTE RS | LIMITED QUANTITIES</p>
         </div>
-        <div>
-          <span>
-            {% render 'icon_dialogue', width: 24, height: 24 %}
-          </span>
-          <a href="">Chat</a>
+        <div class="annoucement__left--div">
+          <p class="annoucement__left--div-paragraph">920,000+ HAPPY CUSTOMERS | ⭐⭐⭐⭐⭐ | SINCE 1999</p>
         </div>
-        <div>
-          <span>
-            {% render 'icon_whatsapp', width: 24, height: 24 %}
+        <div class="annoucement__left--div">
+          <p class="annoucement__left--div-paragraph">EXTENDED RETURNS UNTIL JAN. 10th 2025</p>
+        </div>
+      {% endcomment %}
+    </div>
+    <div class="announcement__right">
+      <div class="annoucement__right--visibleText">
+        <span class="annoucement__right--visibleText__icon">
+          {%- render 'icon_dialogue', width: 20, height: 20, fill: 'white' %}
+        </span>
+        <span
+          class="annoucement__right--visibleText__text"
+        >
+          <p>Chat or Call (900) 000-1113</p>
+        </span>
+      </div>
+      <div class="annoucement__right--hiddenBlock hidden">
+        <div class="annoucement__right--hiddenBlock--phone">
+          <span class="annoucement__right--hiddenBlock--phone__icon">
+            {% render 'icon_phone_call', width: 20, height: 20, fill: 'black' %}
           </span>
-          <a href="">WhatsApp</a>
+          <a class="annoucement__right--hiddenBlock--phone__text" href="">Call</a>
+        </div>
+        <div class="annoucement__right--hiddenBlock--dialogue">
+          <span class="annoucement__right--hiddenBlock--dialogue__icon">
+            {% render 'icon_dialogue', width: 20, height: 20, fill: 'black' %}
+          </span>
+          <a class="annoucement__right--hiddenBlock--dialogue__text" href="">Chat</a>
+        </div>
+        <div class="annoucement__right--hiddenBlock--whatsApp">
+          <span class="annoucement__right--hiddenBlock--whatsApp__icon">
+            {% render 'icon_whatsapp', width: 20, height: 20, fill: 'green' %}
+          </span>
+          <a class="annoucement__right--hiddenBlock--whatsApp__text" href="">WhatsApp</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+{{ 'announcement-bar.js' | asset_url | script_tag }}
 
 {% schema %}
 {

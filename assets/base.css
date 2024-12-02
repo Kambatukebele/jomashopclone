@@ -10,7 +10,7 @@
   display: flex;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .block {
   display: block;
@@ -281,30 +281,30 @@
     max-width: 640px;
     padding: 0px 0px;
     margin: 0 auto;
-    background-color: red;
+    /* background-color: red; */
   }
 }
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
-    background-color: green;
+    /* background-color: green; */
   }
 }
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
-    background-color: yellow;
+    /* background-color: yellow; */
   }
 }
 @media (min-width: 1280px) {
   .container {
     max-width: 1280px;
-    background-color: orange;
+    /* background-color: orange; */
   }
 }
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
-    background-color: purple;
+    /* background-color: purple; */
   }
 }
