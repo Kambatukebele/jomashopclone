@@ -2,21 +2,21 @@
 
 <section class="annoucement w-screen">
   <div class="announcement__wrapper container">
-    <div class="announcement__left">
-      <div class="annoucement__left--div">
-        <p class="annoucement__left--div-paragraph">EARLY BLA CK FRIDAY SALE</p>
-      </div>
-      {% comment %}
+    <div class="annoucement__left--wrapper">
+      <div class="announcement__left">
         <div class="annoucement__left--div">
+          <p class="annoucement__left--div-paragraph">EARLY BLA CK FRIDAY SALE</p>
+        </div>
+        <div class="annoucement__left--div hidden">
           <p class="annoucement__left--div-paragraph">DOORBUSTE RS | LIMITED QUANTITIES</p>
         </div>
-        <div class="annoucement__left--div">
+        <div class="annoucement__left--div hidden">
           <p class="annoucement__left--div-paragraph">920,000+ HAPPY CUSTOMERS | ⭐⭐⭐⭐⭐ | SINCE 1999</p>
         </div>
-        <div class="annoucement__left--div">
+        <div class="annoucement__left--div hidden">
           <p class="annoucement__left--div-paragraph">EXTENDED RETURNS UNTIL JAN. 10th 2025</p>
         </div>
-      {% endcomment %}
+      </div>
     </div>
     <div class="announcement__right">
       <div class="annoucement__right--visibleText">
@@ -52,8 +52,6 @@
     </div>
   </div>
 </section>
-
-{{ 'announcement-bar.js' | asset_url | script_tag }}
 
 {% schema %}
 {

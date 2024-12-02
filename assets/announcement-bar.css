@@ -10,15 +10,56 @@
 }
 
 /* Annoucement Left */
+.annoucement__left--wrapper {
+  width: 400px; /* Width of the visible area */
+  overflow: hidden; /* Hide content outside the container */
+  white-space: nowrap; /* Ensure content stays on one line */
+  position: relative;
+}
 .announcement__left {
-  width: 100%;
+  display: flex;
+  scroll-behavior: smooth;
+}
+.announcement__left > .annoucement__left--div {
+  flex: 0 0 100%;
+  background-color: green;
+}
+@keyframes scrollAnnoucementBar {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  } /* Hold the first item in view */
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  } /* Hold the second item in view */
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  } /* Hold the third item in view */
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  } /* Hold the fourth item in view */
+  100% {
+    transform: translateX(0);
+  } /* Return to the first item */
 }
 .announcement__left
   > .annoucement__left--div
   > .annoucement__left--div-paragraph {
   font-size: 12px;
   font-weight: 400;
-  text-align: center;
+  text-align: start;
+  padding: 10px 20px;
   text-transform: uppercase;
 }
 
@@ -38,6 +79,7 @@
   }
 
   /* Annoucement Left */
+
   .announcement__left {
     width: 50%;
     display: flex;
