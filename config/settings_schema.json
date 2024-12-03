@@ -41,6 +41,16 @@
         "info": "The standard size for favicons is 16x16 pixels, but most designers start with 32x32 pixels to accommodate retina screen"
       }
     ]
+  },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo_id",
+        "label": "Logo"
+      }
+    ]
   }
   // {
   //   "name": "Colors",

@@ -1,0 +1,92 @@
+{{- 'header.css' | asset_url | stylesheet_tag -}}
+
+<header class="header">
+  <nav class="header__nav container">
+    <div class="header__top">
+      <span class="header__top--menu">{% render 'icon_menu', width: 28, height: 28, fill: '#000000' %}</span>
+      <a href="/" class="header__top--logo">
+        {%- if settings.logo != blank -%}
+          <img width="170" height="auto" src="{{ settings.logo_id | image_url }}">
+        {%- else -%}
+          {{- shop.name | capitalize -}}
+        {%- endif -%}
+      </a>
+      <form class="header__top--form">
+        <span class="header__top--formIcon">
+          {% render 'icon_search', width: 20, height: 20, fill: '#000000' %}
+        </span>
+        <input class="header__top--formInput" type="search" placeholder="Search for product or brands...">
+      </form>
+      <div class="header__top--localization">
+        <img
+          class="header__top--localizationImage"
+          width="20"
+          height="20"
+          src="{{ 'usa.png' | asset_img_url: 'small' }}"
+        >
+        <span class="header__top--localizationText">Us. $</span>
+        <span class="header__top--localizationIcon">
+          {%- render 'icon_angle_small_down', width: '20', height: '20', fill: '#000000' -%}
+        </span>
+      </div>
+      <div class="header__top--user">
+        <span class="header__top--userIcon">
+          {% render 'icon_circle_user', width: '24', height: '24', fill: '#000000' %}
+        </span>
+        <span class="header__top--userText">Sign in</span>
+      </div>
+      <div class="header__top--icons">
+        <span class="header__top--iconsHeart">
+          {%- render 'icon_heart', width: '24', height: '24', fill: '#000000' -%}
+        </span>
+        <span class="header__top--iconsBag">
+          {%- render 'icon_shopping_bag', width: '24', height: '24', fill: '#000000' -%}
+        </span>
+      </div>
+    </div>
+    {% comment %}
+      <ul class="header__bottom">
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>Home</a>
+        </li>
+      </ul>
+    {% endcomment %}
+  </nav>
+</header>
+
+{% schema %}
+{ "name": "Header", "class": "header", "settings": [], "presets": [{ "name": "Header" }] }
+{% endschema %}

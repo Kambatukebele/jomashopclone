@@ -12,6 +12,8 @@
     "heading_font_picker_id": "inter_n4",
     "body_font_picker_id": "inter_n4",
     "favicon_id": "shopify://shop_images/Jomashop_favicon.png",
+    "logo_id": "shopify://shop_images/jomashop_logo.webp",
+    "logo": "shopify://shop_images/Jomashop_favicon.png",
     "content_for_index": []
   },
   "presets": {

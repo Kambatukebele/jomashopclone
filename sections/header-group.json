@@ -14,9 +14,14 @@
     "announcement_bar_EaHMR7": {
       "type": "announcement-bar",
       "settings": {}
+    },
+    "header_npUxjN": {
+      "type": "header",
+      "settings": {}
     }
   },
   "order": [
-    "announcement_bar_EaHMR7"
+    "announcement_bar_EaHMR7",
+    "header_npUxjN"
   ]
 }
