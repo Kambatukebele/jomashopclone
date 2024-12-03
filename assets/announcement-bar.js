@@ -20,20 +20,14 @@ function slideAnnoucement() {
   // console.log(scrollingDiv);
   window.addEventListener("load", (e) => {
     const scrollingDivs = document.querySelectorAll(".annoucement__left--div");
-    // for (let i = 0; i < scrollingDivs.length; i++) {
-    //   const element = array[i];
-
-    // }
-    scrollingDivs.forEach((divs, index) => {
+    for (let i = 0; i < scrollingDivs.length; i++) {
       let current = 0;
-      console.log(divs[index]);
-
       setInterval(() => {
         if (!divs.classList.contains("hidden")) {
           divs.classList.add("hidden");
         }
       }, 5000);
-    });
+    }
   });
 }
 

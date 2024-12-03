@@ -22,7 +22,7 @@
 }
 .announcement__left > .annoucement__left--div {
   flex: 0 0 100%;
-  background-color: green;
+  /* background-color: green; */
 }
 @keyframes scrollAnnoucementBar {
   0% {
