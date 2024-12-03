@@ -279,7 +279,7 @@
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
-    padding: 0px 0px;
+    padding: 0px 10px;
     margin: 0 auto;
     /* background-color: red; */
   }
@@ -308,3 +308,23 @@
     /* background-color: purple; */
   }
 }
+
+/* 
+  
+@media (min-width: 640px) {
+  
+}
+@media (min-width: 768px) {
+ 
+}
+@media (min-width: 1024px) {
+  
+}
+@media (min-width: 1280px) {
+  
+}
+@media (min-width: 1536px) {
+  
+}
+
+*/
