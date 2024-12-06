@@ -1,6 +1,7 @@
 {{- 'header.css' | asset_url | stylesheet_tag -}}
 {{- 'header-nav-desktop.css' | asset_url | stylesheet_tag -}}
 {{- 'header-nav-mobile.css' | asset_url | stylesheet_tag -}}
+{{- 'header-desktop-dropdown.css' | asset_url | stylesheet_tag -}}
 
 <header class="header">
   <nav class="header__nav container relative">
@@ -78,6 +79,111 @@
     </ul>
   </nav>
 </header>
+
+{% comment %} Desktop Dropdown Mega menu {% endcomment %}
+<section class="sub-menu">
+  <div class="sub-menu__wrapper container">
+    <div class="sub-menu__dropdown">
+      <div class="sub-menu__dropdown--title-group">
+        <h4 class="sub-menu__dropdown--title">Featured Brands</h4>
+        <span>{% render 'plus', width:"20", height:"20" %}</span>
+      </div>
+      <div class="sub-menu__dropdown--desc-group">
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Cartie</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Citizen</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Montblanc</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Rolex</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Seiko</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Tissot</a>
+        </p>
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc">View All Brands</a>
+        </p>
+      </div>
+    </div>   
+    <div class="sub-menu__dropdown">
+      <div>
+        <div class="sub-menu__dropdown--title-group">
+          <h4 class="sub-menu__dropdown--title">Featured Brands</h4>
+          <span>{% render 'plus', width:"20", height:"20" %}</span>
+        </div>
+        <div class="sub-menu__dropdown--desc-group">
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Cartie</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Citizen</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="sub-menu__dropdown--title-group">
+          <h4 class="sub-menu__dropdown--title">Featured Brands</h4>
+          <span>{% render 'plus', width:"20", height:"20" %}</span>
+        </div>
+        <div class="sub-menu__dropdown--desc-group">
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Cartie</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Citizen</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {% comment %} img {% endcomment %}
+    <div class="sub-menu__dropdown">
+      <div class="sub-menu__dropdown-img">
+        <img width="250px" height="auto" src="{{ 'mens.jpg' | asset_url  }}">
+      </div>
+      <div>        
+        <p class="sub-menu__dropdown--desc">
+          <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 {% schema %}
 { 

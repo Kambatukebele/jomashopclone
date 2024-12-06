@@ -1,15 +1,13 @@
 .header__mobile {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  gap: 15px;
-  background-color: red;
-  position: absolute;
-  top: 0;
-  left: 0%;
-  width: 80%;
+  display: block;
+  background-color: white;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 10;
-  padding: 30px 10px;
+  padding: 20px 30px;
   height: 100vh;
   transform: translateX(-100%);
 }
@@ -17,6 +15,7 @@
   animation-name: showMenu;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  left: 0%;
 }
 .closeMenuAnnimation {
   animation-name: hideMenu;
@@ -44,6 +43,9 @@
 .header__mobile__IconClose-span {
   display: block;
 }
+.header__mobile--list {
+  padding: 10px 0px;
+}
 .header__mobile--list-group {
   display: flex;
   justify-content: space-between;
@@ -55,6 +57,22 @@
   display: block;
   text-decoration: none;
   color: black;
+}
+@media (min-width: 640px) {
+  /* .header__mobile {
+    transform: translateX(-107%);
+  }
+  .openMenuAnnimation {
+    left: -9%;
+  } */
+}
+@media (min-width: 768px) {
+  /* .header__mobile {
+    transform: translateX(-114%);
+  }
+  .openMenuAnnimation {
+    left: -15%;
+  } */
 }
 @media (min-width: 1024px) {
   .header__mobile {
