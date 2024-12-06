@@ -1,30 +1,28 @@
 function hiddenBlock() {
-  const text = document.querySelector(".annoucement__right--visibleText__text"); // Capturing the text in annoucement
-  const hiddenBlockInAnnoucement = document.querySelector(
-    ".annoucement__right--hiddenBlock"
-  ); // capturing the hidden block in annoucement
+  const text = document.querySelector('.annoucement__right--visibleText__text'); // Capturing the text in annoucement
+  const hiddenBlockInAnnoucement = document.querySelector('.annoucement__right--hiddenBlock'); // capturing the hidden block in annoucement
 
-  text.addEventListener("click", () => {
-    if (hiddenBlockInAnnoucement.classList.contains("hidden")) {
-      hiddenBlockInAnnoucement.classList.remove("hidden");
+  text.addEventListener('click', () => {
+    if (hiddenBlockInAnnoucement.classList.contains('hidden')) {
+      hiddenBlockInAnnoucement.classList.remove('hidden');
     } else {
-      hiddenBlockInAnnoucement.classList.add("hidden");
+      hiddenBlockInAnnoucement.classList.add('hidden');
     }
   });
 }
 
-hiddenBlock();
+// hiddenBlock();
 
 // Slide
 function slideAnnoucement() {
   // console.log(scrollingDiv);
-  window.addEventListener("load", (e) => {
-    const scrollingDivs = document.querySelectorAll(".annoucement__left--div");
+  window.addEventListener('load', (e) => {
+    const scrollingDivs = document.querySelectorAll('.annoucement__left--div');
     for (let i = 0; i < scrollingDivs.length; i++) {
       let current = 0;
       setInterval(() => {
-        if (!divs.classList.contains("hidden")) {
-          divs.classList.add("hidden");
+        if (!divs.classList.contains('hidden')) {
+          divs.classList.add('hidden');
         }
       }, 5000);
     }
