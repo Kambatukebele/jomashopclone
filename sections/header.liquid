@@ -1,7 +1,9 @@
 {{- 'header.css' | asset_url | stylesheet_tag -}}
+{{- 'header-nav-desktop.css' | asset_url | stylesheet_tag -}}
+{{- 'header-nav-mobile.css' | asset_url | stylesheet_tag -}}
 
 <header class="header">
-  <nav class="header__nav container">
+  <nav class="header__nav container relative">
     <div class="header__top">
       <span class="header__top--menu">{% render 'icon_menu', width: 28, height: 28, fill: '#000000' %}</span>
       <a href="/" class="header__top--logo">
@@ -44,49 +46,46 @@
         </span>
       </div>
     </div>
-    {% comment %}
-      <ul class="header__bottom">
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Home</a>
-        </li>
-      </ul>
-    {% endcomment %}
+    {% comment %} This is the desktop menu and it has it own css {% endcomment %}
+    <ul class="header__bottom hidden">
+     {% for link in section.settings.menu.links %}
+        <li class="header__bottom--list">
+          <a class="header__bottom__list-link" href="{{- link.url -}}">{{- link.title -}}</a>
+          <div class="sub-menu">
+
+          </div>
+        </li>         
+      {% endfor %}
+    </ul>
+    {% comment %} This is the mobile menu and it has it own css as well {% endcomment %}
+     <ul class="header__mobile hidden">
+     {% for link in section.settings.menu.links %}
+        <li class="header__mobile--list">
+          <div class="header__mobile--list-group">
+            <a class="header__mobile--list-link" href="{{- link.url -}}">{{- link.title -}}</a>
+            <span class="header__mobile--list-icon">{% render 'icon_angle_small_down', width:20 %}</span>
+          </div>
+          <div class="sub-menu">
+            
+          </div>
+        </li>         
+      {% endfor %}
+    </ul>
   </nav>
 </header>
 
 {% schema %}
-{ "name": "Header", "class": "header", "settings": [], "presets": [{ "name": "Header" }] }
+{ 
+  "name": "Header", 
+  "class": "header", 
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main menu",
+      "info": "Header menu"
+    },
+  ], 
+  "presets": [{ "name": "Header" }] 
+}
 {% endschema %}
