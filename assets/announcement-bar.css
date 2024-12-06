@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 0px;
+  padding: 5px 0px;
 }
 
 /* Annoucement Left */
@@ -53,9 +53,7 @@
     transform: translateX(0);
   } /* Return to the first item */
 }
-.announcement__left
-  > .annoucement__left--div
-  > .annoucement__left--div-paragraph {
+.announcement__left > .annoucement__left--div > .annoucement__left--div-paragraph {
   font-size: 12px;
   font-weight: 400;
   text-align: start;
@@ -86,9 +84,7 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .announcement__left
-    > .annoucement__left--div
-    > .annoucement__left--div-paragraph {
+  .announcement__left > .annoucement__left--div > .annoucement__left--div-paragraph {
     font-size: 14px;
   }
   /* Annoucement right */
@@ -101,14 +97,10 @@
   .announcement__right > .annoucement__right--visibleText {
     display: block;
   }
-  .announcement__right
-    > .annoucement__right--visibleText
-    > .annoucement__right--visibleText__icon {
+  .announcement__right > .annoucement__right--visibleText > .annoucement__right--visibleText__icon {
     display: none;
   }
-  .announcement__right
-    > .annoucement__right--visibleText
-    > .annoucement__right--visibleText__text {
+  .announcement__right > .annoucement__right--visibleText > .annoucement__right--visibleText__text {
     font-size: 14px;
     font-weight: 400;
     cursor: pointer;
@@ -128,8 +120,7 @@
     z-index: 10;
     border-radius: 8px;
     opacity: 1;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     animation-duration: 1s;
     animation-name: showHide;
     animation-iteration-count: 1;
@@ -142,8 +133,7 @@
   }
   .annoucement__right--hiddenBlock > .annoucement__right--hiddenBlock--phone,
   .annoucement__right--hiddenBlock > .annoucement__right--hiddenBlock--dialogue,
-  .annoucement__right--hiddenBlock
-    > .annoucement__right--hiddenBlock--whatsApp {
+  .annoucement__right--hiddenBlock > .annoucement__right--hiddenBlock--whatsApp {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -173,9 +163,7 @@
     align-items: center;
     gap: 10px;
   }
-  .announcement__right
-    > .annoucement__right--visibleText
-    > .annoucement__right--visibleText__icon {
+  .announcement__right > .annoucement__right--visibleText > .annoucement__right--visibleText__icon {
     display: block;
   }
 }
