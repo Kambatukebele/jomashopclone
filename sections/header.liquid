@@ -58,7 +58,12 @@
       {% endfor %}
     </ul>
     {% comment %} This is the mobile menu and it has it own css as well {% endcomment %}
-     <ul class="header__mobile hidden">
+     <ul class="header__mobile">
+      <div class="header__mobile__IconClose">
+        <span class="header__mobile__IconClose-span">
+          {% render 'icon_close_circle', width: '36', height: '36' %}
+        </span>
+      </div>
      {% for link in section.settings.menu.links %}
         <li class="header__mobile--list">
           <div class="header__mobile--list-group">

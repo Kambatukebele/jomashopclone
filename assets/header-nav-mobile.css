@@ -6,11 +6,43 @@
   background-color: red;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0%;
   width: 80%;
   z-index: 10;
   padding: 30px 10px;
   height: 100vh;
+  transform: translateX(-100%);
+}
+.openMenuAnnimation {
+  animation-name: showMenu;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.closeMenuAnnimation {
+  animation-name: hideMenu;
+  animation-duration: 1s;
+}
+@keyframes showMenu {
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes hideMenu {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.header__mobile__IconClose {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 10px;
+}
+.header__mobile__IconClose-span {
+  display: block;
 }
 .header__mobile--list-group {
   display: flex;
