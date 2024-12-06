@@ -6,24 +6,17 @@
 .sub-menu__wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
-  grid-template-areas:
-    '.'
-    '.'
-    '.'
-    '.'
-    '.'
-    '.';
   padding: 20px 20px;
 }
 .sub-menu__dropdown--title-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 .sub-menu__dropdown--desc-group {
-  display: block;
+  display: none;
 }
 .sub-menu__dropdown--title {
   font-size: 14px;
