@@ -1,0 +1,31 @@
+.header__mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 15px;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  z-index: 10;
+  padding: 30px 10px;
+  height: 100vh;
+}
+.header__mobile--list-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__mobile--list-group > .header__mobile--list-link,
+.header__mobile--list-group > .header__mobile--list-icon {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+@media (min-width: 1024px) {
+  .header__mobile {
+    display: none !important;
+  }
+}

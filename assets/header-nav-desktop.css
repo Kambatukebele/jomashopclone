@@ -1,0 +1,20 @@
+@media (min-width: 1024px) {
+  .header__bottom {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0px;
+  }
+  .header__bottom--list {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .header__bottom--list > .header__bottom__list-link {
+    text-decoration: none;
+    color: black;
+  }
+}
+@media (min-width: 1280px) {
+}
+@media (min-width: 1536px) {
+}
