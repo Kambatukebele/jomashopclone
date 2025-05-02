@@ -1,52 +1,83 @@
 {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
 
-<section class="annoucement w-screen">
+<section
+  style="background-color: {{ section.settings.announcement_bar_bg_color }}; color: {{ section.settings.announcement_bar_text_color }}"
+  class="announcement w-full"
+>
   <div class="announcement__wrapper container">
-    <div class="annoucement__left--wrapper">
-      <div class="announcement__left">
-        <div class="annoucement__left--div">
-          <p class="annoucement__left--div-paragraph">EARLY BLA CK FRIDAY SALE</p>
-        </div>
-        <div class="annoucement__left--div hidden">
-          <p class="annoucement__left--div-paragraph">DOORBUSTE RS | LIMITED QUANTITIES</p>
-        </div>
-        <div class="annoucement__left--div hidden">
-          <p class="annoucement__left--div-paragraph">920,000+ HAPPY CUSTOMERS | ⭐⭐⭐⭐⭐ | SINCE 1999</p>
-        </div>
-        <div class="annoucement__left--div hidden">
-          <p class="annoucement__left--div-paragraph">EXTENDED RETURNS UNTIL JAN. 10th 2025</p>
-        </div>
+    {% # left div %}
+    <div class="announcement__left--wrapper">
+      <div id="scrollContainer" class="announcement__left">
+        {% # loop announcement here %}
+        {%- if section.blocks.size > 0 -%}
+          {%- for announce in section.blocks -%}
+            {%- case announce.type -%}
+              {%- when 'announcement' -%}
+                <div class="announcement__left--div slide">
+                  <p
+                    style="text-transform:capitalize"
+                    class="announcement__left--div-paragraph"
+                  >
+                    {{- announce.settings.block_announcement_text -}}
+                  </p>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        {%- else -%}
+          <div class="announcement__left--div slide">
+            <p class="announcement__left--div-paragraph">Early black friday sale</p>
+          </div>
+        {%- endif -%}
       </div>
     </div>
+    {% # right div %}
     <div class="announcement__right">
-      <div class="annoucement__right--visibleText">
-        <span class="annoucement__right--visibleText__icon">
-          {%- render 'icon_dialogue', width: 20, height: 20, fill: 'white' %}
+      <div class="announcement__right--visibleText">
+        <span class="announcement__right--visibleText__icon">
+          {{ 'icon-chat-white.svg' | inline_asset_content }}
         </span>
         <span
-          class="annoucement__right--visibleText__text"
+          class="announcement__right--visibleText__text"
         >
-          <p>Chat or Call (900) 000-1113</p>
+          {{ section.settings.announcement_right_text }}
         </span>
       </div>
-      <div class="annoucement__right--hiddenBlock hidden">
-        <div class="annoucement__right--hiddenBlock--phone">
-          <span class="annoucement__right--hiddenBlock--phone__icon">
-            {% render 'icon_phone_call', width: 20, height: 20, fill: 'black' %}
+      <div class="announcement__right--hiddenBlocks hiddenBlock">
+        <div class="announcement__right--hiddenBlock phone">
+          <span class="announcement__right--hiddenBlock--phone__icon">
+            {{ 'icon-phone.svg' | inline_asset_content }}
           </span>
-          <a class="annoucement__right--hiddenBlock--phone__text" href="">Call</a>
+          <a class="announcement__right--hiddenBlock__text" href="">
+            {%- if section.settings.announcement_hidden_call != blank -%}
+              {{ section.settings.announcement_hidden_call }}
+            {%- else -%}
+              Call
+            {%- endif -%}
+          </a>
         </div>
-        <div class="annoucement__right--hiddenBlock--dialogue">
-          <span class="annoucement__right--hiddenBlock--dialogue__icon">
-            {% render 'icon_dialogue', width: 20, height: 20, fill: 'black' %}
+        <div class="announcement__right--hiddenBlock dialogue">
+          <span class="announcement__right--hiddenBlock--dialogue__icon">
+            {{ 'icon-chat-black.svg' | inline_asset_content }}
           </span>
-          <a class="annoucement__right--hiddenBlock--dialogue__text" href="">Chat</a>
+          <a class="announcement__right--hiddenBlock__text" href="">
+            {%- if section.settings.announcement_hidden_chat != blank -%}
+              {{ section.settings.announcement_hidden_chat }}
+            {%- else -%}
+              Chat
+            {%- endif -%}
+          </a>
         </div>
-        <div class="annoucement__right--hiddenBlock--whatsApp">
-          <span class="annoucement__right--hiddenBlock--whatsApp__icon">
-            {% render 'icon_whatsapp', width: 20, height: 20, fill: 'green' %}
+        <div class="announcement__right--hiddenBlock whatsApp">
+          <span class="announcement__right--hiddenBlock--whatsApp__icon">
+            {{ 'icon-whatsup.svg' | inline_asset_content }}
           </span>
-          <a class="annoucement__right--hiddenBlock--whatsApp__text" href="">WhatsApp</a>
+          <a class="announcement__right--hiddenBlock__text" href="">
+            {%- if section.settings.announcement_hidden_whatsup != blank -%}
+              {{ section.settings.announcement_hidden_whatsup }}
+            {%- else -%}
+              Whatsup
+            {%- endif -%}
+          </a>
         </div>
       </div>
     </div>
@@ -55,15 +86,117 @@
 
 {% schema %}
 {
-  "name": "annoucement-bar",
-  "class": "annoucement-bar",
+  "name": "Announcement-bar",
+  "class": "announcement-bar",
   "tag": "section",
   "enabled_on": { "groups": ["header"] },
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement bar settings"
+    },
+    {
+      "type": "color",
+      "id": "announcement_bar_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "announcement_bar_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Right text"
+    },
+    {
+      "type": "text",
+      "id": "announcement_right_text",
+      "label": "Announcement right text",
+      "default": "Chat or call",
+      "placeholder": "Chat or call (900) 000 000 00"
+    },
+    {
+      "type": "header",
+      "content": "Hidden block information on hover"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "announcement_hidden_call",
+      "label": "Add a link for Call"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "announcement_hidden_chat",
+      "label": "Add a link for Chat"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "announcement_hidden_whatsup",
+      "label": "Add a link for Whatsup"
+    },
+    {
+      "type": "header",
+      "content": "Announcement text transform"
+    },
+    {
+      "type": "select",
+      "id": "announcement_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "Normal"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "none"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Announcement",
+      "type": "announcement",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Announcement block settings"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "block_announcement_text",
+          "label": "Announcement text"
+        }
+      ]
+    }
+  ],
   "locales": {
-    "en": { "title": "Annoucement bar" },
+    "en": { "title": "Announcement bar" },
     "fr": { "title": "Barre d'announce" }
   },
-  "presets": [{ "name": "Annoucement bar" }]
+  "presets": [
+    {
+      "name": "Announcement bar",
+      "settings": {
+        "announcement_bar_bg_color": "#000000",
+        "announcement_bar_text_color": "#ffffff"
+      },
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
