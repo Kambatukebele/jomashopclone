@@ -13,13 +13,44 @@
   "sections": {
     "announcement_bar_EaHMR7": {
       "type": "announcement-bar",
-      "settings": {}
+      "blocks": {
+        "announcement_M9HkQF": {
+          "type": "announcement",
+          "settings": {
+            "block_announcement_text": "DOORBUSTERS | LIMITED QUANTITIES"
+          }
+        },
+        "announcement_XRRWEz": {
+          "type": "announcement",
+          "settings": {
+            "block_announcement_text": "945 000  HAPPY CUSTOMERS | ⭐⭐⭐⭐⭐ | SINCE"
+          }
+        },
+        "announcement_3NAp4U": {
+          "type": "announcement",
+          "settings": {
+            "block_announcement_text": "MOTHER'S DAY SALE  "
+          }
+        }
+      },
+      "block_order": [
+        "announcement_M9HkQF",
+        "announcement_XRRWEz",
+        "announcement_3NAp4U"
+      ],
+      "settings": {
+        "announcement_bar_bg_color": "#131313",
+        "announcement_bar_text_color": "#ffffff",
+        "announcement_right_text": "Chat or Call (977) 123-4567",
+        "announcement_hidden_call": "Call",
+        "announcement_hidden_chat": "Chat",
+        "announcement_hidden_whatsup": "Whatsup",
+        "announcement_transform": "capitalize"
+      }
     },
     "header_npUxjN": {
       "type": "header",
-      "settings": {
-        "menu": "main-menu"
-      }
+      "settings": {}
     }
   },
   "order": [
