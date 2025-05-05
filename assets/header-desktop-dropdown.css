@@ -15,8 +15,11 @@
   align-items: center;
   margin-bottom: 20px;
 }
-.sub-menu__dropdown--desc-group {
+.sub-menuHide {
   display: none;
+}
+
+.sub-menu__dropdown--desc-group {
 }
 .sub-menu__dropdown--title {
   font-size: 14px;
@@ -51,7 +54,9 @@
     height: 390px;
     padding: 20px 30px;
   }
-
+  .sub-menuHide {
+    display: block !important;
+  }
   .sub-menu__dropdown-img > img {
     border-radius: 8px;
     width: 100%;

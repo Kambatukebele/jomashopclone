@@ -10,19 +10,36 @@ headerCloseMenu.addEventListener('click', () => {
   headerMobile.classList.add('closeMenuAnnimation');
 });
 
+//Show and hide mega menu
+const megaMenu = () => {};
+
+megaMenu();
+
 // Submenu js code
 const subMenu = () => {
   const subMenuDropdownTitleGroup = document.querySelectorAll('.sub-menu__dropdown--title-group');
   const subMenuDropdownDescGroup = document.querySelectorAll('.sub-menu__dropdown--desc-group');
-  for (let i = 0; i < subMenuDropdownTitleGroup.length; i++) {
-    subMenuDropdownTitleGroup[i].addEventListener('click', () => {
-      for (let j = 0; j < subMenuDropdownDescGroup.length; j++) {
-        if (i === j) {
-          console.log(subMenuDropdownDescGroup[j]);
+  console.log(subMenuDropdownDescGroup);
 
-          subMenuDropdownDescGroup[j].style.display = 'block';
-        }
+  for (let i = 0; i < subMenuDropdownTitleGroup.length; i++) {
+    subMenuDropdownTitleGroup[i].addEventListener('click', (e) => {
+      if (e.target.parentElement.nextElementSibling.classList.contains('sub-menuHide')) {
+        e.target.parentElement.nextElementSibling.classList.remove('sub-menuHide');
+        // e.target.parentElement.nextElementSibling.classList.add('block');
+      } else {
+        e.target.parentElement.nextElementSibling.classList.add('sub-menuHide');
+        // e.target.parentElement.nextElementSibling.classList.remove('block');
       }
+
+      // console.log(e.target.parentElement.nextElementSibling);
+
+      // for (let j = 0; j < subMenuDropdownDescGroup.length; j++) {
+      //   if (i === j) {
+      //     console.log(subMenuDropdownDescGroup[j]);
+
+      //     subMenuDropdownDescGroup[j].style.display = 'block';
+      //   }
+      // }
     });
   }
 };

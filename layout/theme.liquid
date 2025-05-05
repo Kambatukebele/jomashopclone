@@ -11,6 +11,7 @@
     {%- endif -%}
 
     <title>title here</title>
+    {{ 'utils.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'reset.css' | asset_url | stylesheet_tag }}
     {% comment %} Fonts {% endcomment %}
