@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{- 'header.css' | asset_url | stylesheet_tag -}}
 {{- 'header-mobile-megamenu.css' | asset_url | stylesheet_tag -}}
 
@@ -13,10 +14,26 @@
         <a href="/" class="header__top--logo">
           {%- if settings.logo != blank -%}
             {{ settings.logo_id | image_url: width: 240 | image_tag: class: 'logo_img' }}
+=======
+{% comment %}
+  {{- 'header.css' | asset_url | stylesheet_tag -}}
+  {{- 'header-nav-desktop.css' | asset_url | stylesheet_tag -}}
+  {{- 'header-nav-mobile.css' | asset_url | stylesheet_tag -}}
+  {{- 'header-desktop-dropdown.css' | asset_url | stylesheet_tag -}}
+
+  <header class="header">
+    <nav class="header__nav container relative">
+      <div class="header__top">
+        <span class="header__top--menu">{% render 'icon_menu', width: 28, height: 28, fill: '#000000' %}</span>
+        <a href="/" class="header__top--logo">
+          {%- if settings.logo != blank -%}
+            <img width="170" height="auto" src="{{ settings.logo_id | image_url }}">
+>>>>>>> 648461ce37a5de5b53fa794bcfcc51778d5dfc49
           {%- else -%}
             {{- shop.name | capitalize -}}
           {%- endif -%}
         </a>
+<<<<<<< HEAD
       </div>
       <form class="header__top--form">
         <span class="header__top--formIcon">
@@ -25,6 +42,14 @@
         <input class="header__top--formInput" type="search" placeholder="Search for product or brands...">
       </form>
       <div class="header__top--icons">
+=======
+        <form class="header__top--form">
+          <span class="header__top--formIcon">
+            {% render 'icon_search', width: 20, height: 20, fill: '#000000' %}
+          </span>
+          <input class="header__top--formInput" type="search" placeholder="Search for product or brands...">
+        </form>
+>>>>>>> 648461ce37a5de5b53fa794bcfcc51778d5dfc49
         <div class="header__top--localization">
           <img
             class="header__top--localizationImage"
@@ -32,13 +57,20 @@
             height="20"
             src="{{ 'usa.png' | asset_img_url: 'small' }}"
           >
+<<<<<<< HEAD
           <span class="header__top--localizationText">Us</span>
           <span class="header__top--localizationIcon">
             {{ 'icon-arrow-down.svg' | inline_asset_content }}
+=======
+          <span class="header__top--localizationText">Us. $</span>
+          <span class="header__top--localizationIcon">
+            {%- render 'icon_angle_small_down', width: '20', height: '20', fill: '#000000' -%}
+>>>>>>> 648461ce37a5de5b53fa794bcfcc51778d5dfc49
           </span>
         </div>
         <div class="header__top--user">
           <span class="header__top--userIcon">
+<<<<<<< HEAD
             {{ 'icon-user.svg' | inline_asset_content }}
           </span>
           <span class="header__top--userText">Sign in</span>
@@ -167,6 +199,300 @@
 </header>
 
 {% comment %} Desktop Dropdown Mega menu {% endcomment %}
+=======
+            {% render 'icon_circle_user', width: '24', height: '24', fill: '#000000' %}
+          </span>
+          <span class="header__top--userText">Sign in</span>
+        </div>
+        <div class="header__top--icons">
+          <span class="header__top--iconsHeart">
+            {%- render 'icon_heart', width: '24', height: '24', fill: '#000000' -%}
+          </span>
+          <span class="header__top--iconsBag">
+            {%- render 'icon_shopping_bag', width: '24', height: '24', fill: '#000000' -%}
+          </span>
+        </div>
+      </div>
+      {% comment %} This is the desktop menu and it has it own css {% endcomment %}
+      <ul class="header__bottom hidden">
+       {% for link in section.settings.menu.links %}
+          <li class="header__bottom--list">
+            <a class="header__bottom__list-link" href="{{- link.url -}}">{{- link.title -}}</a>
+            <div class="sub-menu">
+
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      {% comment %} This is the mobile menu and it has it own css as well {% endcomment %}
+      {% comment %} <ul class="header__mobile">
+        <div class="header__mobile__IconClose">
+          <span class="header__mobile__IconClose-span">
+            {% render 'icon_close_circle', width: '36', height: '36' %}
+          </span>
+        </div>
+       {% for link in section.settings.menu.links %}
+          <li class="header__mobile--list">
+            <div class="header__mobile--list-group">
+              <a class="header__mobile--list-link" href="{{- link.url -}}">{{- link.title -}}</a>
+              <span class="header__mobile--list-icon">{% render 'icon_angle_small_down', width:20 %}</span>
+            </div>
+            <div class="sub-menu">
+
+            </div>
+          </li>
+        {% endfor %}
+      </ul> {% endcomment %}
+    </nav>
+  </header>
+
+  {% comment %} Desktop Dropdown Mega menu {% endcomment %}
+  {% comment %} <section class="sub-menu">
+    <div class="sub-menu__wrapper container">
+      <div class="sub-menu__dropdown">
+        <div class="sub-menu__dropdown--title-group">
+          <h4 class="sub-menu__dropdown--title">Featured Brands1</h4>
+          <span>{% render 'plus', width:"20", height:"20" %}</span>
+        </div>
+        <div class="sub-menu__dropdown--desc-group sub-menuHide">
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Cartie1</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Citizen1</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Montblanc</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Rolex</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Seiko</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Tissot</a>
+          </p>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc">View All Brands</a>
+          </p>
+        </div>
+      </div>
+      <div class="sub-menu__dropdown">
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+      </div>
+        <div class="sub-menu__dropdown">
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+      </div>
+        <div class="sub-menu__dropdown">
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+      </div>
+        <div class="sub-menu__dropdown">
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen2</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="sub-menu__dropdown--title-group">
+            <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
+            <span>{% render 'plus', width:"20", height:"20" %}</span>
+          </div>
+          <div class="sub-menu__dropdown--desc-group sub-menuHide">
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Cartie3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Citizen3</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Fossil</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Gucci</a>
+            </p>
+            <p class="sub-menu__dropdown--desc">
+              <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {% comment %} img {% endcomment %}
+      <div class="sub-menu__dropdown">
+        <div class="sub-menu__dropdown-img">
+          <img width="250px" height="auto" src="{{ 'mens.jpg' | asset_url  }}">
+        </div>
+        <div>
+          <p class="sub-menu__dropdown--desc">
+            <a href="" class="sub-menu__dropdown--desc--link">Invicta</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+>>>>>>> 648461ce37a5de5b53fa794bcfcc51778d5dfc49
 
 {% comment %}
   <section class="sub-menu">
@@ -416,6 +742,7 @@
   </section>
 {% endcomment %}
 
+<<<<<<< HEAD
 {% schema %}
 {
   "name": "Header",
@@ -431,3 +758,21 @@
   "presets": [{ "name": "Header" }]
 }
 {% endschema %}
+=======
+  {% schema %}
+  {
+    "name": "Header",
+    "class": "header",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Main menu",
+        "info": "Header menu"
+      },
+    ],
+    "presets": [{ "name": "Header" }]
+  }
+  {% endschema %}
+{% endcomment %}
+>>>>>>> 648461ce37a5de5b53fa794bcfcc51778d5dfc49
