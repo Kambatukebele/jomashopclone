@@ -1,26 +1,30 @@
-{% comment %}
-  {{- 'header.css' | asset_url | stylesheet_tag -}}
-  {{- 'header-nav-desktop.css' | asset_url | stylesheet_tag -}}
-  {{- 'header-nav-mobile.css' | asset_url | stylesheet_tag -}}
-  {{- 'header-desktop-dropdown.css' | asset_url | stylesheet_tag -}}
+{{- 'header.css' | asset_url | stylesheet_tag -}}
+{{- 'header-mobile-megamenu.css' | asset_url | stylesheet_tag -}}
 
-  <header class="header">
-    <nav class="header__nav container relative">
-      <div class="header__top">
-        <span class="header__top--menu">{% render 'icon_menu', width: 28, height: 28, fill: '#000000' %}</span>
+<header class="header">
+  <nav class="header__nav container">
+    <div class="header__top">
+      <div class="header__top--menu-logo">
+        <div class="header__top--Menu">
+          <span>
+            {{ 'icon-hamburger-menu.svg' | inline_asset_content }}
+          </span>
+        </div>
         <a href="/" class="header__top--logo">
           {%- if settings.logo != blank -%}
-            <img width="170" height="auto" src="{{ settings.logo_id | image_url }}">
+            {{ settings.logo_id | image_url: width: 240 | image_tag: class: 'logo_img' }}
           {%- else -%}
             {{- shop.name | capitalize -}}
           {%- endif -%}
         </a>
-        <form class="header__top--form">
-          <span class="header__top--formIcon">
-            {% render 'icon_search', width: 20, height: 20, fill: '#000000' %}
-          </span>
-          <input class="header__top--formInput" type="search" placeholder="Search for product or brands...">
-        </form>
+      </div>
+      <form class="header__top--form">
+        <span class="header__top--formIcon">
+          {{ 'icon-search.svg' | inline_asset_content }}
+        </span>
+        <input class="header__top--formInput" type="search" placeholder="Search for product or brands...">
+      </form>
+      <div class="header__top--icons">
         <div class="header__top--localization">
           <img
             class="header__top--localizationImage"
@@ -28,66 +32,149 @@
             height="20"
             src="{{ 'usa.png' | asset_img_url: 'small' }}"
           >
-          <span class="header__top--localizationText">Us. $</span>
+          <span class="header__top--localizationText">Us</span>
           <span class="header__top--localizationIcon">
-            {%- render 'icon_angle_small_down', width: '20', height: '20', fill: '#000000' -%}
+            {{ 'icon-arrow-down.svg' | inline_asset_content }}
           </span>
         </div>
         <div class="header__top--user">
           <span class="header__top--userIcon">
-            {% render 'icon_circle_user', width: '24', height: '24', fill: '#000000' %}
+            {{ 'icon-user.svg' | inline_asset_content }}
           </span>
           <span class="header__top--userText">Sign in</span>
         </div>
-        <div class="header__top--icons">
-          <span class="header__top--iconsHeart">
-            {%- render 'icon_heart', width: '24', height: '24', fill: '#000000' -%}
-          </span>
-          <span class="header__top--iconsBag">
-            {%- render 'icon_shopping_bag', width: '24', height: '24', fill: '#000000' -%}
-          </span>
-        </div>
+        <span class="header__top--iconsHeart">
+          {{ 'icon-heart.svg' | inline_asset_content }}
+        </span>
+        <span class="header__top--iconsBag">
+          {{ 'icon-shopping-cart.svg' | inline_asset_content }}
+        </span>
       </div>
-      {% comment %} This is the desktop menu and it has it own css {% endcomment %}
-      <ul class="header__bottom hidden">
-       {% for link in section.settings.menu.links %}
-          <li class="header__bottom--list">
-            <a class="header__bottom__list-link" href="{{- link.url -}}">{{- link.title -}}</a>
-            <div class="sub-menu">
-
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-      {% comment %} This is the mobile menu and it has it own css as well {% endcomment %}
-      {% comment %} <ul class="header__mobile">
-        <div class="header__mobile__IconClose">
-          <span class="header__mobile__IconClose-span">
-            {% render 'icon_close_circle', width: '36', height: '36' %}
+    </div>
+    <div class="header__bottom">
+      {% # This menu for the mobile version %}
+      {% # step 1 %}
+      {% comment %}
+        <ul class="header__mobile--megamenu">
+          {% for item in (1..15) %}
+            <li class="header__mobile--li">
+              <a href="#">Home</a>
+              <span>{{ 'icon-arrow-right.svg' | inline_asset_content }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endcomment %}
+      {% # step 2 %}
+      <ul class="header__mobile--megamenu-level2">
+        <div class="header__mobile--megamemu-level2-title">
+          <span>
+            {{ 'icon-long-arrow.svg' | inline_asset_content }}
           </span>
+          <span>Men</span>
         </div>
-       {% for link in section.settings.menu.links %}
-          <li class="header__mobile--list">
-            <div class="header__mobile--list-group">
-              <a class="header__mobile--list-link" href="{{- link.url -}}">{{- link.title -}}</a>
-              <span class="header__mobile--list-icon">{% render 'icon_angle_small_down', width:20 %}</span>
+        <div>
+          {% for item in (1..5) %}
+            <div class="mobile--megamenu-bottom--menu">
+              <div class="mobile--megamenu-bottom--menu-title">
+                <a class="mobile--megamenu-bottom--menu-title-a">Sign in</a>
+                <div class="mobile--megamenu-bottom--menu-icon">
+                  <span class="mobile--megamenu--plus">
+                    {{ 'icon-plus.svg' | inline_asset_content }}
+                  </span>
+                  <span class="mobile--megamenu--minus">
+                    {{ 'icon-minus.svg' | inline_asset_content }}
+                  </span>
+                </div>
+              </div>
+              <div class="mobile--megamenu-bottom--menu-list">
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+              </div>
             </div>
-            <div class="sub-menu">
-
+          {% endfor %}
+          <div class="mobile-megamenuLevel2">
+            <a>Shop All Mens</a>
+          </div>
+        </div>
+      </ul>
+      {% comment %}
+        <div class="header__mobile--megamenu-bottom">
+          {% for item in (1..5) %}
+            <div class="mobile--megamenu-bottom--menu">
+              <div class="mobile--megamenu-bottom--menu-title">
+                <a class="mobile--megamenu-bottom--menu-title-a">Sign in</a>
+                <div class="mobile--megamenu-bottom--menu-icon">
+                  <span class="mobile--megamenu--plus">
+                    {{ 'icon-plus.svg' | inline_asset_content }}
+                  </span>
+                  <span class="mobile--megamenu--minus">
+                    {{ 'icon-minus.svg' | inline_asset_content }}
+                  </span>
+                </div>
+              </div>
+              <div class="mobile--megamenu-bottom--menu-list">
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+                <a href="#">Sign up</a>
+              </div>
             </div>
-          </li>
-        {% endfor %}
-      </ul> {% endcomment %}
-    </nav>
-  </header>
+          {% endfor %}
 
-  {% comment %} Desktop Dropdown Mega menu {% endcomment %}
-  {% comment %} <section class="sub-menu">
+          <div class="mobile--megamenu-bottom--icons">
+            <a>
+              {{ 'icon-facebook.svg' | inline_asset_content }}
+            </a>
+            <a>
+              {{ 'icon-x.svg' | inline_asset_content }}
+            </a>
+            <a>
+              {{ 'icon-instagram.svg' | inline_asset_content }}
+            </a>
+            <a>
+              {{ 'icon-youtube.svg' | inline_asset_content }}
+            </a>
+          </div>
+          <div class="mobile--megamenu-bottom--logos">
+            <a>
+              <img width="100" height="auto" src="{{ 'apple-white.png' | asset_url }}">
+            </a>
+            <a>
+              <img width="100" height="auto" src="{{ 'google-black.png' | asset_url }}">
+            </a>
+          </div>
+          <div class="mobile--megamenu-bottom--terms">
+            <a href="">Careers</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">Privacy Policy</a>
+          </div>
+          <div class="mobile--megamenu-bottom--customer">
+            <span>Customer # 100 999 877 665</span>
+          </div>
+          <div class="mobile--megamenu-bottom-copywrite">© 1999-2025 JOMASHOP. ALL RIGHTS RESERVED.</div>
+        </div>
+      {% endcomment %}
+    </div>
+    {% # This menu for the Desktop version %}
+    <div class="header__megamenu"></div>
+  </nav>
+</header>
+
+{% comment %} Desktop Dropdown Mega menu {% endcomment %}
+
+{% comment %}
+  <section class="sub-menu">
     <div class="sub-menu__wrapper container">
       <div class="sub-menu__dropdown">
         <div class="sub-menu__dropdown--title-group">
           <h4 class="sub-menu__dropdown--title">Featured Brands1</h4>
-          <span>{% render 'plus', width:"20", height:"20" %}</span>
+          <span>{% render 'plus', width: '20', height: '20' %}</span>
         </div>
         <div class="sub-menu__dropdown--desc-group sub-menuHide">
           <p class="sub-menu__dropdown--desc">
@@ -126,7 +213,7 @@
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -149,7 +236,7 @@
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -170,11 +257,11 @@
           </div>
         </div>
       </div>
-        <div class="sub-menu__dropdown">
+      <div class="sub-menu__dropdown">
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -197,7 +284,7 @@
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -218,11 +305,11 @@
           </div>
         </div>
       </div>
-        <div class="sub-menu__dropdown">
+      <div class="sub-menu__dropdown">
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -245,7 +332,7 @@
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -266,11 +353,11 @@
           </div>
         </div>
       </div>
-        <div class="sub-menu__dropdown">
+      <div class="sub-menu__dropdown">
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands2</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -293,7 +380,7 @@
         <div>
           <div class="sub-menu__dropdown--title-group">
             <h4 class="sub-menu__dropdown--title">Featured Brands3</h4>
-            <span>{% render 'plus', width:"20", height:"20" %}</span>
+            <span>{% render 'plus', width: '20', height: '20' %}</span>
           </div>
           <div class="sub-menu__dropdown--desc-group sub-menuHide">
             <p class="sub-menu__dropdown--desc">
@@ -326,22 +413,21 @@
         </div>
       </div>
     </div>
-  </section> {% endcomment %}
-
-
-  {% schema %}
-  {
-    "name": "Header",
-    "class": "header",
-    "settings": [
-      {
-        "type": "link_list",
-        "id": "menu",
-        "label": "Main menu",
-        "info": "Header menu"
-      },
-    ],
-    "presets": [{ "name": "Header" }]
-  }
-  {% endschema %}
+  </section>
 {% endcomment %}
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main menu",
+      "info": "Header menu"
+    }
+  ],
+  "presets": [{ "name": "Header" }]
+}
+{% endschema %}
