@@ -1,0 +1,22 @@
+.header__bottom-desktop {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .header__bottom-desktop {
+    display: block;
+  }
+  .header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 47px;
+  }
+  .header__menu-list {
+  }
+  .header__menu-link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+  }
+}

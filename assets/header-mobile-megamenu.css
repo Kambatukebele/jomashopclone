@@ -1,4 +1,10 @@
-.header__bottom {
+/* Step 1: Top-level mobile menu */
+.menu-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: transform 0.9s ease;
   background-color: white;
   width: 280px;
   z-index: 50;
@@ -11,132 +17,101 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.header__mobile--megamenu {
+.menu-slide__close {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 85%;
+  margin: 0px auto 20px;
+}
+.slide-default {
+  transform: translateX(-100%);
+}
+.slide-default-level-2 {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.slide-in {
+  transform: translateX(0%);
+}
+
+.slide-out-left {
+  transform: translateX(-100%);
+}
+
+.slide-in-right {
+  transform: translateX(0%);
+}
+
+.slide-out-right {
+  transform: translateX(100%);
+}
+.header__bottom-mobile.open {
+  animation: toggleLevelOneOpen 0.5s ease-in-out forwards;
+}
+.header__bottom-mobile.close {
+  animation: toggleLevelOneClose 0.5s ease-in-out forwards;
+}
+@keyframes toggleLevelOneOpen {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes toggleLevelOneClose {
+  0% {
+    left: px;
+  }
+  100% {
+    left: -300px;
+  }
+}
+.mobile-menu__level-1 {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 13px;
+  padding-bottom: 20px;
+  transform: translateX(0px);
 }
-.header__mobile--li {
+.mobile-menu__item {
   width: 85%;
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header__mobile--li a {
+.mobile-menu__item a {
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   color: #000;
 }
-.header__mobile--megamenu-bottom {
-  background-color: #f5f5f5;
-}
-.mobile--megamenu-bottom--menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  flex-direction: column;
-  width: 85%;
-  height: fit-content;
-  margin: 0px auto;
-  padding: 8px 0px;
-}
-.mobile--megamenu--minus {
-  display: none;
-}
-.mobile--megamenu-bottom--menu-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* ENd Step 1: Top-level mobile menu */
+/* Step 2: Submenu (Level 2) */
+.mobile-menu__level-2 {
   width: 100%;
-}
-.mobile--megamenu-bottom--menu-title-a {
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.mobile--megamenu-bottom--menu-list {
-  display: none;
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  height: fit-content;
-  gap: 15px;
 }
-.mobile--megamenu-bottom--menu-list a {
-  font-size: 14px;
-  text-decoration: none;
-  display: block;
-  color: #000;
-} /**/
-.mobile--megamenu-bottom--icons {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 10px;
-  margin: 10px auto;
-  width: 85%;
-}
-.mobile--megamenu-bottom--icons a {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(0, 0, 0);
-}
-
-.mobile--megamenu-bottom--logos {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 10px;
-  margin: 10px auto;
-  width: 85%;
-}
-.mobile--megamenu-bottom--terms {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: center;
-  gap: 10px;
-  margin: 10px auto;
-  width: 85%;
-}
-.mobile--megamenu-bottom--terms a {
-  font-size: 12px;
-  color: #000;
-}
-.mobile--megamenu-bottom--customer {
-  margin: 10px auto;
-  width: 85%;
-}
-.mobile--megamenu-bottom--customer span {
-  font-size: 13px;
-  color: #000;
-}
-.mobile--megamenu-bottom-copywrite {
-  font-size: 13px;
-  color: #000000ad;
-  margin: 10px auto;
-  width: 85%;
-}
-.header__mobile--megamemu-level2-title {
+.mobile-menu__level-2-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 85%;
   margin: 20px auto;
 }
-.mobile-megamenuLevel2 {
+.mobile-menu__cta {
   width: 85%;
   margin: 20px auto;
 }
-.mobile-megamenuLevel2 a {
+.mobile-menu__cta a {
   width: 100%;
   height: 57px;
   background-color: black;
@@ -150,4 +125,117 @@
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
+}
+/* End Step 2: Submenu (Level 2) */
+/* Persistent menu footer css : list */
+.mobile-menu__bottom {
+  background-color: #f5f5f5;
+}
+.mobile-submenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  width: 85%;
+  height: fit-content;
+  margin: 0px auto;
+  padding: 8px 0px;
+}
+.mobile-submenu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.mobile-submenu__title {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+.mobile-submenu__icon-minus,
+.icon-minus {
+  display: none;
+}
+.mobile-submenu__list,
+.mobile-submenu__list-persistent {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: fit-content;
+  gap: 15px;
+  padding: 10px 0px;
+  transition: transform 0.4s ease;
+}
+.mobile-submenu__list a,
+.mobile-submenu__list-persistent a {
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  color: #000;
+}
+/* Persistent menu footer css : social icons */
+.mobile-menu__social-icons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto;
+  width: 85%;
+}
+.mobile-menu__social-icons a {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+}
+/* Persistent menu footer css : Logos */
+.mobile-menu__app-logos {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto;
+  width: 85%;
+}
+/* Persistent menu footer css : Terms and Conditions */
+.mobile-menu__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto;
+  width: 85%;
+}
+.mobile-menu__links a {
+  font-size: 12px;
+  color: #000;
+}
+/* Persistent menu footer css : Customer contact */
+.mobile-menu__customer-id {
+  margin: 10px auto;
+  width: 85%;
+}
+.mobile-menu__customer-id span {
+  font-size: 13px;
+  color: #000;
+}
+/* Persistent menu footer css : footer copyright */
+.mobile-menu__copyright {
+  font-size: 13px;
+  color: #000000ad;
+  margin: 10px auto;
+  width: 85%;
+}
+/* End Persistent menu footer css */
+@media (min-width: 1024px) {
+  .header__bottom-mobile,
+  .header__menu--icon {
+    display: none;
+  }
 }

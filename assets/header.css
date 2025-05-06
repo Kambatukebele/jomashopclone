@@ -11,7 +11,13 @@
   padding: 20px 0px;
   gap: 10px;
 }
-.header__top--menu-logo {
+.header__menu-logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.header__logo {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -19,12 +25,12 @@
   order: 1;
   width: 50%;
 }
-.logo_img {
+.header__logo-img {
   width: 100px;
   height: auto;
 }
 
-.header__top--form {
+.header__form {
   border: 1px solid #000;
   display: flex;
   justify-content: flex-start;
@@ -38,7 +44,7 @@
   gap: 10px;
   order: 3;
 }
-.header__top--formInput {
+.header__form-input {
   border: none;
   background-color: transparent;
   outline: none;
@@ -46,7 +52,7 @@
   color: #000;
   width: 100%;
 }
-.header__top--icons {
+.header__icons {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -54,9 +60,9 @@
   order: 2;
   width: 40%;
 }
-.header__top--localization span:nth-of-type(1),
-.header__top--localization span:nth-of-type(2),
-.header__top--user span:nth-of-type(2) {
+.header__localization span:nth-of-type(1),
+.header__localization span:nth-of-type(2),
+.header__user span:nth-of-type(2) {
   display: none;
 }
 
@@ -64,7 +70,7 @@
   .logo_img {
     width: 190px;
   }
-  .header__top--icons {
+  .header__icons {
     gap: 10px;
   }
 }
@@ -73,27 +79,30 @@
     flex-wrap: nowrap;
     gap: 80px;
   }
-  .header__top--Menu {
+  .header__menu {
     display: none;
   }
-  .header__top--menu-logo {
+  .header__logo {
     width: fit-content;
   }
-  .header__top--form {
+  .header__logo-img {
+    width: 170px;
+  }
+  .header__form {
     order: 2;
     width: 100%;
   }
-  .header__top--icons {
+  .header__icons {
     order: 3;
     gap: 20px;
     width: max-content;
   }
-  .header__top--localization span:nth-of-type(1),
-  .header__top--localization span:nth-of-type(2),
-  .header__top--user span:nth-of-type(2) {
+  .header__localization span:nth-of-type(1),
+  .header__localization span:nth-of-type(2),
+  .header__user span:nth-of-type(2) {
     display: block;
   }
-  .header__top--localization {
+  .header__localization {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +111,7 @@
     border-radius: 10px;
     padding: 10px 10px;
   }
-  .header__top--user {
+  .header__user {
     width: 100px;
     display: flex;
     justify-content: center;

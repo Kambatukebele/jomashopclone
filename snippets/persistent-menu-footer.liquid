@@ -1,0 +1,50 @@
+<div class="mobile-menu__bottom">
+  {% for item in (1..5) %}
+    <div class="mobile-submenu">
+      <div class="mobile-submenu__header">
+        <a href="#" class="mobile-submenu__title"> Sign in </a>
+        <div class="mobile-submenu__icons">
+          <span class="mobile-submenu__icon-plus">
+            {{ 'icon-plus.svg' | inline_asset_content }}
+          </span>
+          <span class="mobile-submenu__icon-minus">
+            {{ 'icon-minus.svg' | inline_asset_content }}
+          </span>
+        </div>
+      </div>
+      <div class="mobile-submenu__list-persistent">
+        {% for i in (1..6) %}
+          <a href="#">Sign up</a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  {% # Persistent menu footer css : social icons comment %}
+  <div class="mobile-menu__social-icons">
+    <a href="#">{{ 'icon-facebook.svg' | inline_asset_content }}</a>
+    <a href="#">{{ 'icon-x.svg' | inline_asset_content }}</a>
+    <a href="#">{{ 'icon-instagram.svg' | inline_asset_content }}</a>
+    <a href="#">{{ 'icon-youtube.svg' | inline_asset_content }}</a>
+  </div>
+  {% # Persistent menu footer css : Logos %}
+  <div class="mobile-menu__app-logos">
+    <a href="#">
+      <img src="{{ 'apple-white.png' | asset_url }}" width="100" height="auto" alt="Apple Store">
+    </a>
+    <a href="#">
+      <img src="{{ 'google-black.png' | asset_url }}" width="100" height="auto" alt="Google Play">
+    </a>
+  </div>
+  {% # Persistent menu footer css : Terms and Conditions %}
+  <div class="mobile-menu__links">
+    <a href="#">Careers</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+  {% # Persistent menu footer css : Customer contact %}
+  <div class="mobile-menu__customer-id">
+    <span>Customer # 100 999 877 665</span>
+  </div>
+  {% # Persistent menu footer css : footer copyright %}
+  <div class="mobile-menu__copyright">© 1999-2025 JOMASHOP. ALL RIGHTS RESERVED.</div>
+</div>
