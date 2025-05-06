@@ -50,7 +50,9 @@
     },
     "header_npUxjN": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "menu": "main-menu"
+      }
     }
   },
   "order": [
