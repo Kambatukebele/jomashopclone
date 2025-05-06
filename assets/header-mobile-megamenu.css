@@ -86,7 +86,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.mobile-menu__item a {
+.mobile-menu__item a,
+.mobile-menu__item span {
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;

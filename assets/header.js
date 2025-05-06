@@ -6,6 +6,8 @@ const toggleMenu = () => {
   const mobileMenuIcons = document.querySelectorAll('.mobile-menu__icon'); // targetting the mobile menu on first level
   const mobileMenuBackIcon = document.querySelector('.mobile-menu__back-icon'); // Targetting the icon back from the level 2 to return to level 1
   const menuSlideClose = document.querySelector('.menu-slide__close'); // Closing first level
+  const dataMenuId = document.querySelectorAll('[data-menu-id]');
+  console.log(dataMenuId);
 
   // Opening the first level
   hamburgerIcon.addEventListener('click', function () {

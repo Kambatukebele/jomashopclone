@@ -58,7 +58,6 @@
       <div class="header__bottom-mobile">
         {% # Step 1: Top-level mobile menu %}
         <div id="level-1-wrapper" class="menu-slide slide-default">
-          {% # Close level one %}
           <span class="menu-slide__close">
             {{ 'icon-close.svg' | inline_asset_content }}
           </span>
@@ -73,7 +72,7 @@
                   <span>
                     {{- menu.title -}}
                   </span>
-                  <span class="mobile-menu__icon">
+                  <span data-menu-id="{{ menu.title }}" class="mobile-menu__icon">
                     {{ 'icon-arrow-right.svg' | inline_asset_content }}
                   </span>
                 {%- endif -%}
@@ -93,28 +92,37 @@
               <span class="mobile-menu__section-title">Men</span>
             </div>
             <div>
-              {% for item in (1..5) %}
-                <div class="mobile-submenu">
-                  <div class="mobile-submenu__header">
-                    <a class="mobile-submenu__title">Sign in</a>
-                    <div class="mobile-submenu__toggle-icons">
-                      <span class="icon-plus">
-                        {{ 'icon-plus.svg' | inline_asset_content }}
-                      </span>
-                      <span class="icon-minus">
-                        {{ 'icon-minus.svg' | inline_asset_content }}
-                      </span>
+              {% for menu in section.settings.menu.links %}
+                {% for submenu in menu.links %}
+                  <div class="mobile-submenu">
+                    <div class="mobile-submenu__header">
+                      <a href="{{ submenu.url }}" class="mobile-submenu__title">
+                        {{ submenu.title }}
+                      </a>
+                      {%- if submenu.levels > 0 -%}
+                        <div class="mobile-submenu__toggle-icons">
+                          <span class="icon-plus">
+                            {{ 'icon-plus.svg' | inline_asset_content }}
+                          </span>
+                          <span class="icon-minus">
+                            {{ 'icon-minus.svg' | inline_asset_content }}
+                          </span>
+                        </div>
+                      {%- endif -%}
                     </div>
+                    <!-- level 3 -->
+                    {%- if submenu.levels > 0 -%}
+                      <div class="mobile-submenu__list">
+                        <a href="#">Sign up</a>
+                        <a href="#">Sign up</a>
+                        <a href="#">Sign up</a>
+                        <a href="#">Sign up</a>
+                        <a href="#">Sign up</a>
+                        <a href="#">Sign up</a>
+                      </div>
+                    {%- endif -%}
                   </div>
-                  <div class="mobile-submenu__list">
-                    <a href="#">Sign up</a>
-                    <a href="#">Sign up</a>
-                    <a href="#">Sign up</a>
-                    <a href="#">Sign up</a>
-                    <a href="#">Sign up</a>
-                    <a href="#">Sign up</a>
-                  </div>
-                </div>
+                {% endfor %}
               {% endfor %}
               <div class="mobile-menu__cta">
                 <a>Shop All Mens</a>
