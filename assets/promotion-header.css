@@ -1,0 +1,39 @@
+.promotion_header {
+  height: 50px;
+}
+.promotion_header__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+  border-radius: 10px;
+}
+.promotion_header__image {
+  display: none;
+}
+.promotion_header__text {
+  font-size: 13px;
+  font-weight: 600;
+}
+.promotion_header__link {
+  font-size: 13px;
+}
+
+@media (min-width: 1024px) {
+  .promotion_header__text,
+  .promotion_header__link {
+    font-size: 15px;
+  }
+  .promotion_header__image {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+  .promotion_header__image__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
