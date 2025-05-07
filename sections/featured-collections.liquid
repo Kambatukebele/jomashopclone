@@ -24,7 +24,7 @@
           </a>
         {%- endfor -%}
       {%- else -%}
-        {%- for item in (1..6) -%}
+        {%- for item in (1..12) -%}
           <a href="#" class="featured_collections__card">
             <div class="featured_collections__image">
               {{ 'product-2' | placeholder_svg_tag: 'featured_collections__image-img' }}
@@ -49,8 +49,8 @@
     {
       "type": "collection_list",
       "id": "featured_collections__grid",
-      "label": "Select 6 collections",
-      "limit": 6
+      "label": "Select 12 collections",
+      "limit": 12
     }
   ],
   "presets": [

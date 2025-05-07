@@ -25,28 +25,19 @@
           "mens-jewelry",
           "men",
           "handbags",
-          "jewelry"
-        ]
-      }
-    },
-    "featured_collections_fLbGQy": {
-      "type": "featured-collections",
-      "name": "Featured collections",
-      "settings": {
-        "featured_collections__grid": [
-          "clothing",
-          "fragrances-beauty",
-          "gifts",
-          "handbags",
           "jewelry",
-          "pre-owned"
+          "clothing",
+          "men-sunglasses",
+          "pre-owned",
+          "sale",
+          "shoes",
+          "watches"
         ]
       }
     }
   },
   "order": [
     "hero",
-    "featured_collections_6J7qyj",
-    "featured_collections_fLbGQy"
+    "featured_collections_6J7qyj"
   ]
 }
