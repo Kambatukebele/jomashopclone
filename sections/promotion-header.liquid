@@ -5,24 +5,26 @@
     style="background-color: {{ section.settings.promotion_header_bg_color }}"
     class="promotion_header__wrapper container"
   >
-    {% # Image on large screen %}
-    <div class="promotion_header__image">
-      {%- if section.settings.promotion_header_image != blank -%}
-        {{ section.settings.promotion_header_image | image_url: width: 100 | image_tag: class: 'promotion_header__image__img' }}
-      {%- endif -%}
-    </div>
-    {% # Text %}
-    <h4 style="color: {{ section.settings.promotion_header_text_color }}; text-transform: {{ section.settings.promotion_header_text_transform }}" class="promotion_header__text">
-      Mother's day: Up to 75% off
-    </h4>
-    {% # Text with link %}
-    <a
-      style="color: {{ section.settings.promotion_header_text_color }}; text-transform: {{ section.settings.promotion_header_text_transform }}""
-      class="promotion_header__link"
-      href="{{ section.settings.promotion_header_button_url }}"
-    >
-      {{ section.settings.promotion_header_button_text }}
-    </a>
+    <div class="promotion_header__card">
+      {% # Image on large screen %}
+      <div class="promotion_header__image">
+        {%- if section.settings.promotion_header_image != blank -%}
+          {{ section.settings.promotion_header_image | image_url: width: 100 | image_tag: class: 'promotion_header__image__img' }}
+        {%- endif -%}
+      </div>
+      {% # Text %}
+      <h4 style="color: {{ section.settings.promotion_header_text_color }}; text-transform: {{ section.settings.promotion_header_text_transform }}" class="promotion_header__text">
+        Mother's day: Up to 75% off
+      </h4>
+      {% # Text with link %}
+      <a
+        style="color: {{ section.settings.promotion_header_text_color }}; text-transform: {{ section.settings.promotion_header_text_transform }}""
+        class="promotion_header__link"
+        href="{{ section.settings.promotion_header_button_url }}"
+      >
+        {{ section.settings.promotion_header_button_text }}
+      </a>
+    </div>    
   </div>
 </section>
 
