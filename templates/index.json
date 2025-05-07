@@ -14,9 +14,39 @@
       "settings": {
         "hero__image": "shopify://shop_images/banner_main_MD_2025_1600.jpg"
       }
+    },
+    "featured_collections_6J7qyj": {
+      "type": "featured-collections",
+      "name": "Featured collections",
+      "settings": {
+        "featured_collections__grid": [
+          "sunglasses",
+          "women",
+          "mens-jewelry",
+          "men",
+          "handbags",
+          "jewelry"
+        ]
+      }
+    },
+    "featured_collections_fLbGQy": {
+      "type": "featured-collections",
+      "name": "Featured collections",
+      "settings": {
+        "featured_collections__grid": [
+          "clothing",
+          "fragrances-beauty",
+          "gifts",
+          "handbags",
+          "jewelry",
+          "pre-owned"
+        ]
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "featured_collections_6J7qyj",
+    "featured_collections_fLbGQy"
   ]
 }

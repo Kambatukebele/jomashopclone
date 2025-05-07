@@ -1,0 +1,65 @@
+{{- 'featured-collections.css' | asset_url | stylesheet_tag -}}
+
+<section class="featured_collections">
+  <div class="featured_collections__wrapper container">
+    <div class="featured_collections__grid">
+      <!-- Loop mini card collection here -->
+      {%- if section.settings.featured_collections__grid != blank -%}
+        {%- for featured in section.settings.featured_collections__grid -%}
+          <a href="{{- featured.url -}}" class="featured_collections__card">
+            <div class="featured_collections__image">
+              {%- if featured.image != blank -%}
+                {{- featured.image | image_url: width: 300 | image_tag: class: 'featured_collections__image-img' -}}
+              {%- else -%}
+                {{ 'product-2' | placeholder_svg_tag: 'featured_collections__image-img' }}
+              {%- endif -%}
+            </div>
+            <h4 class="featured_collections__title">
+              {%- if featured.title != blank -%}
+                {{ featured.title }}
+              {%- else -%}
+                Collections title
+              {%- endif -%}
+            </h4>
+          </a>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for item in (1..6) -%}
+          <a href="#" class="featured_collections__card">
+            <div class="featured_collections__image">
+              {{ 'product-2' | placeholder_svg_tag: 'featured_collections__image-img' }}
+            </div>
+            <h4 class="featured_collections__title">Men's watches</h4>
+          </a>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured collections",
+  "class": "featured_collections",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collections"
+    },
+    {
+      "type": "collection_list",
+      "id": "featured_collections__grid",
+      "label": "Select 6 collections",
+      "limit": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collections",
+      "settings": {
+        "featured_collections__grid": []
+      }
+    }
+  ]
+}
+{% endschema %}
