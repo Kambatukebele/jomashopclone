@@ -1,0 +1,41 @@
+{{- 'hero.css' | asset_url | stylesheet_tag -}}
+<section class="hero">
+  <div class="hero__wrapper container">
+    <div class="hero__image">
+      {%- if section.settings.hero__image != blank -%}
+        {{ section.settings.hero__image | image_url: width: 1600 | image_tag: class: 'hero__image-img' }}
+      {%- else -%}
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'hero__image-img' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "hero",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero__image",
+      "label": "Background image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "settings": {
+        "hero__image": ""
+      }
+    }
+  ]
+}
+{% endschema %}
