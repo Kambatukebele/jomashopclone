@@ -10,8 +10,13 @@
 {
   "sections": {
     "hero": {
-      "type": "hero"
+      "type": "hero",
+      "settings": {
+        "hero__image": "shopify://shop_images/banner_main_MD_2025_1600.jpg"
+      }
     }
   },
-  "order": ["hero"]
+  "order": [
+    "hero"
+  ]
 }
