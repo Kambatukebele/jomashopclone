@@ -1,99 +1,19 @@
-<div class="short-card__box">
+<a href="{{ link }}" class="short-card__box {{ class }}">
   <div class="short-card__image-wrapper">
-    {{ 'product-1' | placeholder_svg_tag: 'short-card__image' }}
+    {%- if image != blank -%}
+      {{ image | image_url: width: 400 | image_tag: class: 'short-card__image' }}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'short-card__image' }}
+    {%- endif -%}
   </div>
   <div class="short-card__text-wrapper">
-    <h4 class="short-card__text">Breitling Clearance</h4>
-    <h5 class="short-card__subtext">Up to 60% Off</h5>
+    <h4 class="short-card__text">
+      {{ title }}
+    </h4>
+    <h5 class="short-card__subtext">
+      {{ subtext }}
+    </h5>
   </div>
-</div>
+</a>
 
-<style>
-  /* Divs to display */
-  .short-card__box {
-    width: 46%;
-    height: 100%;
-    min-height: 204px;
-  }
-  .short-card__image-wrapper {
-    width: 100%;
-    height: 100%;
-    min-width: 139px;
-    min-height: 139px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.359);
-    border-radius: 10px;
-  }
-  .short-card__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .short-card__text-wrapper {
-    padding: 5px 9px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 10px;
-  }
-  .short-card__text {
-    font-size: 14px;
-    font-weight: 600;
-    color: #000000;
-  }
-  .short-card__subtext {
-    font-size: 14px;
-    font-weight: 400;
-    color: #666666;
-  } /**/
-  @media (min-width: 640px) {
-    .short-card__image-wrapper {
-      min-height: 240px;
-    }
-  }
-  @media (min-width: 768px) {
-    /* Divs to display */
-    .short-card__box {
-      width: 25%;
-      height: 234px;
-    }
-
-    .short-card__image-wrapper {
-      height: 162px;
-      min-height: 0%;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    /* Divs to display */
-    .short-card__box {
-      height: 285px;
-    }
-    .short-card__image-wrapper {
-      height: 215px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    /* Divs to display */
-    .short-card__box {
-      height: 328px;
-    }
-
-    .short-card__image-wrapper {
-      height: 280px;
-    }
-  }
-  @media (min-width: 1280px) {
-    /* Divs to display */
-    .short-card__box {
-      height: 405px;
-    }
-
-    .short-card__image-wrapper {
-      height: 354px;
-    }
-  }
-</style>
+{% comment %} The css is save in utilis {% endcomment %}

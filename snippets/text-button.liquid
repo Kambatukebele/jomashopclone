@@ -1,41 +1,17 @@
 <div class="text-button__title-container">
   <div class="text-button__title-wrapper">
-    <h3 class="text-button__title">Sales & Events: Mother's Day Sale</h3>
+    {%- if title != blank -%}
+      <h3 class="text-button__title">
+        {{ title }}
+      </h3>
+    {%- endif -%}
   </div>
-  <div class="text-button__link-wrapper">
-    <a class="text-button__link" href="#">View All Sales</a>
-  </div>
+  {%- if linkTitle != blank -%}
+    <div class="text-button__link-wrapper">
+      <a class="a__link" href="{{ link }}">
+        {{ linkTitle }}
+      </a>
+    </div>
+  {%- endif -%}
 </div>
-
-<style>
-  .text-button__title-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .text-button__title-wrapper {
-    width: 50%;
-    flex-shrink: 1;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-  }
-  .text-button__title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #000000ca;
-  }
-  .text-button__link-wrapper {
-    width: 50%;
-    flex-shrink: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  @media (min-width: 768px) {
-    .text-button__title {
-      font-size: 24px;
-    }
-  }
-</style>
+{% comment %} The css is save in utilis{% endcomment %}

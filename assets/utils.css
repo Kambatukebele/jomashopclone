@@ -282,3 +282,139 @@
 .rounded-full {
   border-radius: 9999px;
 }
+
+/* Snippet: Text-button */
+.text-button__title-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-button__title-wrapper {
+  width: 50%;
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.text-button__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000ca;
+}
+.text-button__link-wrapper {
+  width: 50%;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .text-button__title {
+    font-size: 24px;
+  }
+}
+/* End Snippet: Text-button */
+/* Snippet: Short-card */
+/* Divs to display */
+.short-card__box {
+  width: 46%;
+  height: 100%;
+  min-height: 204px;
+  text-decoration: none;
+}
+.short-card__image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-width: 139px;
+  min-height: 139px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.short-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.short-card__text-wrapper {
+  padding: 5px 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+.short-card__text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+.short-card__subtext {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+} /**/
+@media (min-width: 640px) {
+  .short-card__image-wrapper {
+    min-height: 240px;
+  }
+}
+@media (min-width: 768px) {
+  /* Divs to display */
+  .short-card__box {
+    width: 25%;
+    height: 234px;
+  }
+
+  .short-card__image-wrapper {
+    height: 162px;
+    min-height: 0%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Divs to display */
+  .short-card__box {
+    height: 285px;
+  }
+  .short-card__image-wrapper {
+    height: 215px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Divs to display */
+  .short-card__box {
+    height: 328px;
+  }
+
+  .short-card__image-wrapper {
+    height: 280px;
+  }
+}
+@media (min-width: 1280px) {
+  /* Divs to display */
+  .short-card__box {
+    height: 405px;
+  }
+
+  .short-card__image-wrapper {
+    height: 354px;
+  }
+}
+/* End Snippet: Short-card */
+
+/* Snippet: a-link */
+.a__link {
+  display: block;
+  padding: 14px 18px 15px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* End Snippet: a-link */
