@@ -76,7 +76,6 @@
   min-width: 139px;
   min-height: 139px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.359);
   border-radius: 10px;
 }
 .promo-stack__image {
