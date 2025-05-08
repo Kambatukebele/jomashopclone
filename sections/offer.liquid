@@ -1,0 +1,141 @@
+{{ 'offer.css' | asset_url | stylesheet_tag }}
+<section
+  style="padding-top: {{  section.settings.offer__paddingY-mobile }}px; padding-bottom: {{ section.settings.offer__paddingY-mobile }}px;"
+  class="offer"
+>
+  <div class="container">
+    <div class="offer__wrapper">
+      {%- if section.settings.offer__checkbox == true -%}
+        <div class="offer__text-wrapper">
+          {% render 'text-button',
+            title: section.settings.offer__title,
+            linkTitle: section.settings.offer__title_btn,
+            link: section.settings.offer__url_btn
+          %}
+        </div>
+      {%- endif -%}
+
+      <div class="offer__cards-wrapper">
+        <div class="offer__cards-slider">
+          {%- if section.blocks.size > 0 -%}
+            {%- for offer in section.blocks -%}
+              {%- case offer.type -%}
+                {%- when 'offer' -%}
+                  {% render 'short-card',
+                    class: 'slide',
+                    image: offer.settings.offer__image,
+                    title: offer.settings.offer__text,
+                    subtext: offer.settings.offer__subtext,
+                    link: offer.settings.offer__url
+                  %}
+              {%- endcase -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- for item in (1..24) -%}
+              {% render 'short-card', class: 'slide' %}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Offer",
+  "class": "offer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Show or Hide offer title"
+    },
+    {
+      "type": "checkbox",
+      "id": "offer__checkbox",
+      "label": "Show or Hide",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Offer Top and bottom spacing on mobile"
+    },
+    {
+      "type": "range",
+      "id": "offer__paddingY-mobile",
+      "label": "Padding top and bottom on mobile",
+      "min": 0,
+      "max": 20,
+      "unit": "px",
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Offer title"
+    },
+    {
+      "type": "text",
+      "id": "offer__title",
+      "label": "Title",
+      "default": "Sales & Events: Mother's Day Sale"
+    },
+    {
+      "type": "header",
+      "content": "Offer Button and link"
+    },
+    {
+      "type": "text",
+      "id": "offer__title_btn",
+      "label": "Title button",
+      "default": "View All Sales"
+    },
+    {
+      "type": "url",
+      "id": "offer__url_btn",
+      "label": "Title button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Offer",
+      "type": "offer",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Accept up to 20 promotions"
+        },
+        {
+          "type": "url",
+          "id": "offer__url",
+          "label": "Offer url"
+        },
+        {
+          "type": "image_picker",
+          "id": "offer__image",
+          "label": "Offer image"
+        },
+        {
+          "type": "text",
+          "id": "offer__text",
+          "label": "Title",
+          "default": "Breitling Clearance"
+        },
+        {
+          "type": "text",
+          "id": "offer__subtext",
+          "label": "SubTitle",
+          "default": "Up to 60% Off"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

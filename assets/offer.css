@@ -1,0 +1,29 @@
+.offer {
+  width: 100%;
+}
+.offer__wrapper {
+  gap: 20px;
+}
+.offer__text-wrapper {
+  margin-bottom: 20px;
+}
+.offer__cards-wrapper {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* -webkit-overflow-scrolling: touch; */
+}
+.offer__cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.offer__cards-slider {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  scroll-behavior: smooth;
+}
+.slide {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}

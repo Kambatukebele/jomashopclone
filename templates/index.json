@@ -142,6 +142,61 @@
         "promo-stack__title_btn": "",
         "promo-stack__url_btn": ""
       }
+    },
+    "offer_8zbrNh": {
+      "type": "offer",
+      "blocks": {
+        "offer_FQEh3R": {
+          "type": "offer",
+          "settings": {
+            "offer__url": "",
+            "offer__image": "shopify://shop_images/gifts_for_him_02.jpg",
+            "offer__text": "Gifts For Him",
+            "offer__subtext": "Choose from 1000+ Items"
+          }
+        },
+        "offer_8CfHMk": {
+          "type": "offer",
+          "settings": {
+            "offer__url": "",
+            "offer__image": "shopify://shop_images/gifts_for_her_04.jpg",
+            "offer__text": "Gifts For Her",
+            "offer__subtext": "Cartier, Dior, Gucci & More"
+          }
+        },
+        "offer_KRQphF": {
+          "type": "offer",
+          "settings": {
+            "offer__url": "",
+            "offer__image": "shopify://shop_images/luxury_gifts_02.jpg",
+            "offer__text": "Luxury Gifts For Him & Her",
+            "offer__subtext": "Bags, Jewelry, Watches..."
+          }
+        },
+        "offer_J3tDyH": {
+          "type": "offer",
+          "settings": {
+            "offer__url": "",
+            "offer__image": "shopify://shop_images/cartier_0502.jpg",
+            "offer__text": "Cartier Watches Sale",
+            "offer__subtext": "Up to 30% Off"
+          }
+        }
+      },
+      "block_order": [
+        "offer_FQEh3R",
+        "offer_8CfHMk",
+        "offer_KRQphF",
+        "offer_J3tDyH"
+      ],
+      "name": "Offer",
+      "settings": {
+        "offer__checkbox": true,
+        "offer__paddingY-mobile": 20,
+        "offer__title": "Limited Time Offers",
+        "offer__title_btn": "",
+        "offer__url_btn": ""
+      }
     }
   },
   "order": [
@@ -149,6 +204,7 @@
     "featured_collections_6J7qyj",
     "list_collections_TEDiEE",
     "promo_stack_zypiiy",
-    "promo_stack_hdr8QU"
+    "promo_stack_hdr8QU",
+    "offer_8zbrNh"
   ]
 }
