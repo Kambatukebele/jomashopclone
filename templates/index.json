@@ -11,12 +11,14 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "disabled": true,
       "settings": {
         "hero__image": "shopify://shop_images/banner_main_MD_2025_1600.jpg"
       }
     },
     "featured_collections_6J7qyj": {
       "type": "featured-collections",
+      "disabled": true,
       "name": "Featured collections",
       "settings": {
         "featured_collections__grid": [
@@ -34,10 +36,27 @@
           "watches"
         ]
       }
+    },
+    "list_collections_TEDiEE": {
+      "type": "list-collections",
+      "name": "List collections",
+      "settings": {
+        "list_collections__list": [
+          "clothing",
+          "handbags",
+          "jewelry",
+          "mens-beauty",
+          "mens-jewelry",
+          "mens-shoes",
+          "shoes",
+          "sale"
+        ]
+      }
     }
   },
   "order": [
     "hero",
-    "featured_collections_6J7qyj"
+    "featured_collections_6J7qyj",
+    "list_collections_TEDiEE"
   ]
 }
