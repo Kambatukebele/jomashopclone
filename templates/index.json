@@ -11,14 +11,12 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "disabled": true,
       "settings": {
         "hero__image": "shopify://shop_images/banner_main_MD_2025_1600.jpg"
       }
     },
     "featured_collections_6J7qyj": {
       "type": "featured-collections",
-      "disabled": true,
       "name": "Featured collections",
       "settings": {
         "featured_collections__grid": [
@@ -52,11 +50,105 @@
           "sale"
         ]
       }
+    },
+    "promo_stack_zypiiy": {
+      "type": "promo-stack",
+      "blocks": {
+        "promo_stack_Qe6QhQ": {
+          "type": "promo-stack",
+          "settings": {
+            "promo-stack__url": "",
+            "promo-stack__image": "shopify://shop_images/breitling_0429.jpg",
+            "promo-stack__text": "",
+            "promo-stack__subtext": ""
+          }
+        },
+        "promo_stack_LNfUdd": {
+          "type": "promo-stack",
+          "settings": {
+            "promo-stack__url": "",
+            "promo-stack__image": "shopify://shop_images/tshirts_0505.jpg",
+            "promo-stack__text": "Designer T-Shirt Clearance",
+            "promo-stack__subtext": "Up to 60% Off"
+          }
+        },
+        "promo_stack_H3nTnW": {
+          "type": "promo-stack",
+          "settings": {
+            "promo-stack__url": "",
+            "promo-stack__image": "shopify://shop_images/omega_0507.jpg",
+            "promo-stack__text": "Omega: 60+ Coupons Added",
+            "promo-stack__subtext": "Up to 90% Off"
+          }
+        }
+      },
+      "block_order": [
+        "promo_stack_Qe6QhQ",
+        "promo_stack_LNfUdd",
+        "promo_stack_H3nTnW"
+      ],
+      "name": "Promo-Stack",
+      "settings": {
+        "promo_stack__paddingY-mobile": 20,
+        "promo-stack__checkbox": true,
+        "promo-stack__reverse": false,
+        "promo-stack__title": "Sales & Events: Mother's Day Sale",
+        "promo-stack__title_btn": "View all Sales",
+        "promo-stack__url_btn": "shopify://collections/sale"
+      }
+    },
+    "promo_stack_hdr8QU": {
+      "type": "promo-stack",
+      "blocks": {
+        "promo_stack_LBVeJj": {
+          "type": "promo-stack",
+          "settings": {
+            "promo-stack__url": "",
+            "promo-stack__image": "shopify://shop_images/rolex_0425_1.jpg",
+            "promo-stack__text": "Mother's Day Special:",
+            "promo-stack__subtext": "RolexIn Stock & Ready To Ship"
+          }
+        },
+        "promo_stack_cTC3Mm": {
+          "type": "promo-stack",
+          "settings": {
+            "promo-stack__url": "",
+            "promo-stack__image": "shopify://shop_images/bags_0331.jpg",
+            "promo-stack__text": "Celine, Loewe, Fendi Bags!",
+            "promo-stack__subtext": "Up to 60% Off"
+          }
+        },
+        "promo_stack_cmafwt": {
+          "type": "promo-stack",
+          "settings": {
+            "promo-stack__url": "",
+            "promo-stack__image": "shopify://shop_images/frag_md_0423.jpg",
+            "promo-stack__text": "Mother's Day Fragrance Sale",
+            "promo-stack__subtext": "Up to 60% Off"
+          }
+        }
+      },
+      "block_order": [
+        "promo_stack_LBVeJj",
+        "promo_stack_cTC3Mm",
+        "promo_stack_cmafwt"
+      ],
+      "name": "Promo-Stack",
+      "settings": {
+        "promo_stack__paddingY-mobile": 20,
+        "promo-stack__checkbox": true,
+        "promo-stack__reverse": true,
+        "promo-stack__title": "",
+        "promo-stack__title_btn": "",
+        "promo-stack__url_btn": ""
+      }
     }
   },
   "order": [
     "hero",
     "featured_collections_6J7qyj",
-    "list_collections_TEDiEE"
+    "list_collections_TEDiEE",
+    "promo_stack_zypiiy",
+    "promo_stack_hdr8QU"
   ]
 }

@@ -1,0 +1,246 @@
+{{ 'promo-stack.css' | asset_url | stylesheet_tag }}
+
+<section
+  style="padding-top: {{ section.settings.promo_stack__paddingY-mobile }}px; padding-bottom: {{ section.settings.promo_stack__paddingY-mobile }}px;"
+  class="promo-stack"
+>
+  <div class="container">
+    <div class="promo-stack__container">
+      <!-- Title and button container -->
+      {%- if section.settings['promo-stack__checkbox'] == true -%}
+        <div class="promo-stack__title-container">
+          <div class="promo-stack__title-wrapper">
+            {%- if section.settings['promo-stack__title'] != blank -%}
+              <h3 class="promo-stack__title">Sales & Events: Mother's Day Sale</h3>
+            {%- endif -%}
+          </div>
+          <div class="promo-stack__link-wrapper">
+            {%- if section.settings['promo-stack__title_btn'] != blank -%}
+              <a class="promo-stack__link" href="#">
+                {{ section.settings['promo-stack__title_btn'] }}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+      <!-- Divs to displays -->
+      <div class="promo-stack__box-container">
+        {%- if section.blocks.size > 0 -%}
+          <div class="promo-stack__layout {% if section.settings.promo-stack__reverse == true %} promo-stack__layout--reverse {%- endif %}">
+            {%- for promo in section.blocks -%}
+              {%- case promo.type -%}
+                {%- when 'promo-stack' -%}
+                  <a
+                    href="{{ promo.settings['promo-stack__url'] }}"
+                    class="promo-stack__box {%- if forloop.last %} promo-stack__box--3 {%- endif -%}"
+                  >
+                    <div class="promo-stack__image-wrapper">
+                      {%- if promo.settings['promo-stack__image'] != blank -%}
+                        {{-
+                          promo.settings['promo-stack__image']
+                          | image_url: width: 700
+                          | image_tag: class: 'promo-stack__image'
+                        -}}
+                      {%- else -%}
+                        {{ 'product-1' | placeholder_svg_tag: 'promo-stack__image' }}
+                      {%- endif -%}
+                    </div>
+                    <div class="promo-stack__text-wrapper">
+                      <h4 class="promo-stack__text">
+                        {%- if promo.settings['promo-stack__text'] != blank -%}
+                          {{ promo.settings['promo-stack__text'] }}
+                        {%- else -%}
+                          Breitling Clearance
+                        {%- endif -%}
+                      </h4>
+                      <h5 class="promo-stack__subtext">
+                        {%- if promo.settings['promo-stack__subtext'] != blank -%}
+                          {{ promo.settings['promo-stack__subtext'] }}
+                        {%- else -%}
+                          Up to 60% Off
+                        {%- endif -%}
+                      </h5>
+                    </div>
+                  </a>
+                {%- else -%}
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          <!-- block 1 -->
+          <div class="promo-stack__layout">
+            <div class="promo-stack__box promo-stack__box--1">
+              <div class="promo-stack__image-wrapper">
+                {{ 'product-1' | placeholder_svg_tag: 'promo-stack__image' }}
+              </div>
+              <div class="promo-stack__text-wrapper">
+                <h4 class="promo-stack__text">Breitling Clearance</h4>
+                <h5 class="promo-stack__subtext">Up to 60% Off</h5>
+              </div>
+            </div>
+            <div class="promo-stack__box promo-stack__box--2">
+              <div class="promo-stack__image-wrapper">
+                {{ 'product-1' | placeholder_svg_tag: 'promo-stack__image' }}
+              </div>
+              <div class="promo-stack__text-wrapper">
+                <h4 class="promo-stack__text">Breitling Clearance</h4>
+                <h5 class="promo-stack__subtext">Up to 60% Off</h5>
+              </div>
+            </div>
+            <div class="promo-stack__box promo-stack__box--3">
+              <div class="promo-stack__image-wrapper">
+                {{ 'product-1' | placeholder_svg_tag: 'promo-stack__image' }}
+              </div>
+              <div class="promo-stack__text-wrapper">
+                <h4 class="promo-stack__text">Breitling Clearance</h4>
+                <h5 class="promo-stack__subtext">Up to 60% Off</h5>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .promo-stack{
+
+
+  }
+  {% comment %} @media (min-width: 1280px) {
+    .promo-stack{
+      padding: {{ section.settings.promo_stack__paddingY-desktop }}px 0px
+    }
+  } {% endcomment %}
+</style>
+{% comment %}
+  {
+    "type": "range",
+    "id": "promo_stack__paddingY-desktop",
+    "label": "Padding top and bottom on desktop",
+    "min": 21,
+    "max": 100,
+    "unit": "px",
+    "step": 1,
+    "default": 21
+  },
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Promo-Stack",
+  "class": "promo-stack",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Promo Top and bottom spacing on mobile"
+    },
+    {
+      "type": "range",
+      "id": "promo_stack__paddingY-mobile",
+      "label": "Padding top and bottom on mobile",
+      "min": 0,
+      "max": 20,
+      "unit": "px",
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Promo Top and bottom spacing on Desktop"
+    },
+
+    {
+      "type": "header",
+      "content": "Show or Hide Promo Stack title"
+    },
+    {
+      "type": "checkbox",
+      "id": "promo-stack__checkbox",
+      "label": "Show or Hide",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Reverse block"
+    },
+    {
+      "type": "checkbox",
+      "id": "promo-stack__reverse",
+      "label": "Reverse block",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Promo Stack title"
+    },
+    {
+      "type": "text",
+      "id": "promo-stack__title",
+      "label": "Title",
+      "default": "Sales & Events: Mother's Day Sale"
+    },
+    {
+      "type": "header",
+      "content": "Promo Button and link"
+    },
+    {
+      "type": "text",
+      "id": "promo-stack__title_btn",
+      "label": "Title button",
+      "default": "View All Sales"
+    },
+    {
+      "type": "url",
+      "id": "promo-stack__url_btn",
+      "label": "Title button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Promo",
+      "type": "promo-stack",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "header",
+          "content": "There should be 3 promotions"
+        },
+        {
+          "type": "url",
+          "id": "promo-stack__url",
+          "label": "Promo url"
+        },
+        {
+          "type": "image_picker",
+          "id": "promo-stack__image",
+          "label": "Promo one"
+        },
+        {
+          "type": "text",
+          "id": "promo-stack__text",
+          "label": "Title",
+          "default": "Breitling Clearance"
+        },
+        {
+          "type": "text",
+          "id": "promo-stack__subtext",
+          "label": "SubTitle",
+          "default": "Up to 60% Off"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo-Stack",
+      "settings": {
+        "promo-stack__title": "Sales & Events: Mother's Day Sale",
+        "promo-stack__title_btn": "View All Sales",
+        "promo-stack__url_btn": ""
+      }
+    }
+  ]
+}
+{% endschema %}

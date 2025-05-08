@@ -38,7 +38,6 @@
         "announcement_XRRWEz",
         "announcement_3NAp4U"
       ],
-      "disabled": true,
       "settings": {
         "announcement_bar_bg_color": "#131313",
         "announcement_bar_text_color": "#ffffff",
@@ -51,14 +50,12 @@
     },
     "header_npUxjN": {
       "type": "header",
-      "disabled": true,
       "settings": {
         "menu": "main-menu"
       }
     },
     "promotion_header_jdWtM6": {
       "type": "promotion-header",
-      "disabled": true,
       "name": "Promotion Header",
       "settings": {
         "promotion_header_image": "shopify://shop_images/tissot-tclassic-automatic-blue-dial-mens-watch-t1374071104100-t1374071104100_2.jpg",
