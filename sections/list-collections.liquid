@@ -1,0 +1,59 @@
+{{ 'list-collections.css' | asset_url | stylesheet_tag }}
+
+<section class="list-collections">
+  <div class="container">
+    <div class="list-collections__container">
+      {%- if section.settings.list_collections__list != blank -%}
+        {%- for list in section.settings.list_collections__list -%}
+          <a href="{{ list.url }}" class="list-collections__card">
+            <h5 class="list-collections__title">
+              {{ list.title }}
+            </h5>
+            <span class="list-collections__icon">
+              {{ 'icon-arrow-right.svg' | inline_asset_content }}
+            </span>
+          </a>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for item in (1..8) -%}
+          <div class="list-collections__card">
+            <h5 class="list-collections__title">Omega</h5>
+            <span class="list-collections__icon">
+              {{ 'icon-arrow-right.svg' | inline_asset_content }}
+            </span>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "List collections",
+  "class": "list_collections",
+  "enabled_on": {
+    "templates": ["*"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "List collections"
+    },
+    {
+      "type": "collection_list",
+      "id": "list_collections__list",
+      "label": "Choose your list",
+      "limit": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "List collections",
+      "settings": {
+        "list_collections__list": []
+      }
+    }
+  ]
+}
+{% endschema %}
