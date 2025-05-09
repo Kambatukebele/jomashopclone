@@ -1,0 +1,51 @@
+<div class="product__card">
+  <div class="product__image-wrapper">
+    {%- if image != blank -%}
+      {{ image | image_url: width: auto | image_tag: class: 'product__image' }}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'product__image' }}
+    {%- endif -%}
+  </div>
+  <div class="product__texts-wrapper">
+    <h4 class="product__title">
+      {%- if title != blank -%}
+        {{ title }}
+      {%- else -%}
+        Product title
+      {%- endif -%}
+    </h4>
+    <p class="product__description">
+      {%- if description != blank -%}
+        {{ description | truncate: 80 }}
+      {%- else -%}
+        SUB 200 C-Graph Aquamarine Chronograph Automatic Blue Dial Men's Watch 798.10.241.10
+      {%- endif -%}
+    </p>
+    {%- if sale != blank -%}
+      <span class="product__sale">
+        {{ sale }}
+      </span>
+    {%- endif -%}
+    <div class="product__price-wrapper">
+      <p class="product__price">
+        {%- if price != blank -%}
+          {{ price | money_with_currency }}
+        {%- endif -%}
+      </p>
+      {%- if compare-price != blank -%}
+        <p class="product__compare-price">
+          {{ compare-price | money_with_currency }}
+        </p>
+      {%- endif -%}
+    </div>
+    {% if coupon != blank %}
+      <div class="product__coupons-wrapper">
+        <span class="product__coupon">$100.00 coupon</span>
+        <span class="product__coupon-after">$1,939.00.00 after coupon</span>
+      </div>
+    {% endif %}
+    <span class="product__whish-list">
+      {{ 'icon-heart.svg' | inline_asset_content }}
+    </span>
+  </div>
+</div>

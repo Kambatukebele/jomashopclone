@@ -197,6 +197,23 @@
         "offer__title_btn": "",
         "offer__url_btn": ""
       }
+    },
+    "product_deals_KypAUj": {
+      "type": "product-deals",
+      "name": "Product deals",
+      "settings": {
+        "product-deals__checkbox": true,
+        "product-deals__paddingY-mobile": 20,
+        "product-deals__title": "Featured Daily Deals",
+        "product-deals__title_btn": "",
+        "product-deals__url_btn": "",
+        "product-deals-lists": [
+          "baume-et-mercier",
+          "tes-product",
+          "maurice-lacroix",
+          "ray-ban"
+        ]
+      }
     }
   },
   "order": [
@@ -205,6 +222,7 @@
     "list_collections_TEDiEE",
     "promo_stack_zypiiy",
     "promo_stack_hdr8QU",
-    "offer_8zbrNh"
+    "offer_8zbrNh",
+    "product_deals_KypAUj"
   ]
 }

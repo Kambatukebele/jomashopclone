@@ -1,0 +1,135 @@
+<section
+  style="padding-top: {{  section.settings.product-deals__paddingY-mobile }}px; padding-bottom: {{ section.settings.product-deals__paddingY-mobile }}px;"
+  class="product-deals"
+>
+  <div class="container">
+    {%- if section.settings['product-deals__checkbox'] == true -%}
+      <div class="product-deals__text-wrapper">
+        {% render 'text-button',
+          title: section.settings['product-deals__title'],
+          linkTitle: section.settings['product-deals__title_btn'],
+          link: section.settings['product-deals__url_btn']
+        %}
+      </div>
+    {%- endif -%}
+    <div class="product-deals__wrapper">
+      {%- if section.settings['product-deals-lists'] != blank -%}
+        {%- for item in section.settings['product-deals-lists'] -%}
+          {% render 'product-card',
+            image: item.featured_image,
+            title: item.title,
+            description: item.description,
+            price: item.price,
+            compare-price: item.compare_at_price
+          %}
+        {%- endfor -%}
+      {%- else -%}
+        {% for item in (1..4) %}
+          {% render 'product-card' %}
+        {% endfor %}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-deals {
+    width: 100%;
+  }
+  .product-deals__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 10px;
+  }
+  .product-deals__text-wrapper {
+    margin-bottom: 20px;
+  }
+  @media (min-width: 768px) {
+    .product-deals__wrapper {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  @media (min-width: 768px) {
+    .product-deals__wrapper {
+      gap: 0px 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product deals",
+  "class": "product_deals",
+  "enabled_on": {
+    "templates": ["*"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Show or Hide product-deals title"
+    },
+    {
+      "type": "checkbox",
+      "id": "product-deals__checkbox",
+      "label": "Show or Hide",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Product deals Top and bottom spacing on mobile"
+    },
+    {
+      "type": "range",
+      "id": "product-deals__paddingY-mobile",
+      "label": "Padding top and bottom on mobile",
+      "min": 0,
+      "max": 20,
+      "unit": "px",
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Product deals title"
+    },
+    {
+      "type": "text",
+      "id": "product-deals__title",
+      "label": "Title",
+      "default": "Sales & Events: Mother's Day Sale"
+    },
+    {
+      "type": "header",
+      "content": "product deals Button and link"
+    },
+    {
+      "type": "text",
+      "id": "product-deals__title_btn",
+      "label": "Title button",
+      "default": "View All Sales"
+    },
+    {
+      "type": "url",
+      "id": "product-deals__url_btn",
+      "label": "Title button URL"
+    },
+    {
+      "type": "header",
+      "content": "Product deals cards"
+    },
+    {
+      "type": "product_list",
+      "id": "product-deals-lists",
+      "label": "Product list",
+      "limit": 4
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Product deals",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -418,3 +418,118 @@
   cursor: pointer;
 }
 /* End Snippet: a-link */
+/* Snippet: Product card */
+.product__card {
+  height: fit-content;
+  position: relative;
+}
+.product__image-wrapper {
+  width: 100%;
+  height: auto;
+  min-height: 139px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px rgba(128, 128, 128, 0.093) solid;
+  border-radius: 10px;
+}
+.product__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.product__texts-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+  padding: 10px 0px;
+}
+.product__title {
+  font-size: 11px;
+  font-weight: 600;
+}
+.product__description {
+  font-size: 12px;
+  font-weight: 400;
+}
+.product__sale {
+  font-size: 12px;
+  font-weight: 400;
+  background-color: rgba(128, 128, 128, 0.282);
+  color: black;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+.product__price-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+.product__price {
+  font-size: 14px;
+  font-weight: 600;
+}
+.product__compare-price {
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.product__coupons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 5px;
+}
+.product__coupon {
+  background-color: orangered;
+  padding: 2px 4px;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.product__coupon-after {
+  font-size: 12px;
+  font-weight: 400;
+}
+.product__whish-list {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+@media (min-width: 640px) {
+  .product__price {
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) {
+  .product__title {
+    font-size: 13px;
+  }
+  .product__description {
+    font-size: 14px;
+  }
+  .product__sale {
+    font-size: 13px;
+  }
+  .product__price {
+    font-size: 14px;
+  }
+  .product__compare-price {
+    font-size: 14px;
+  }
+  .product__coupon {
+    font-size: 14px;
+  }
+  .product__coupon-after {
+    font-size: 14px;
+  }
+}
+/* End Snippet: Product card */
