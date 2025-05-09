@@ -11,8 +11,11 @@
   width: 100%;
 }
 #scrollContainer {
-  overflow-x: scroll; /* Allow horizontal scrolling */
-  overflow-y: hidden; /* Disable vertical scrolling */
+  /* overflow-x: scroll; Allow horizontal scrolling */
+  /*overflow-y: hidden;  Disable vertical scrolling */
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
 }
 #scrollContainer::-webkit-scrollbar {
   display: none; /* Hide the scrollbar */
@@ -24,6 +27,7 @@
   white-space: wrap;
   scroll-snap-type: x mandatory;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 .announcement__left--div {
