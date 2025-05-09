@@ -1,0 +1,21 @@
+.product-deals {
+  width: 100%;
+}
+.product-deals__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 10px;
+}
+.product-deals__text-wrapper {
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .product-deals__wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .product-deals__wrapper {
+    gap: 0px 20px;
+  }
+}
